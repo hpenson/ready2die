@@ -10,7 +10,7 @@ class ExpressionsController < ApplicationController
   end
 
   def index
-    @expressions = Expression.all
+    @expressions = current_user.expressions.page(params[:page]).per(10)
 
     render("expression_templates/index.html.erb")
   end
