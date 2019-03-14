@@ -4,6 +4,8 @@ RSpec.describe User, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:connections) }
+
     it { should have_many(:discretions) }
 
     it { should have_many(:messages) }
