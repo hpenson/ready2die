@@ -1,6 +1,6 @@
 class ThemesController < ApplicationController
   def index
-    @themes = Theme.all
+    @themes = Theme.page(params[:page]).per(10)
 
     render("theme_templates/index.html.erb")
   end

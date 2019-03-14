@@ -1,6 +1,6 @@
 class McsController < ApplicationController
   def index
-    @mcs = Mc.all
+    @mcs = Mc.page(params[:page]).per(10)
 
     render("mc_templates/index.html.erb")
   end

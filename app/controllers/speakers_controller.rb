@@ -1,6 +1,6 @@
 class SpeakersController < ApplicationController
   def index
-    @speakers = Speaker.all
+    @speakers = Speaker.page(params[:page]).per(10)
 
     render("speaker_templates/index.html.erb")
   end

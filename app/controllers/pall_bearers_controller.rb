@@ -1,6 +1,6 @@
 class PallBearersController < ApplicationController
   def index
-    @pall_bearers = PallBearer.all
+    @pall_bearers = PallBearer.page(params[:page]).per(10)
 
     render("pall_bearer_templates/index.html.erb")
   end

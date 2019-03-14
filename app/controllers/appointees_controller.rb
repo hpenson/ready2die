@@ -1,6 +1,6 @@
 class AppointeesController < ApplicationController
   def index
-    @appointees = Appointee.all
+    @appointees = Appointee.page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@appointees.where.not(:address_latitude => nil)) do |appointee, marker|
       marker.lat appointee.address_latitude
       marker.lng appointee.address_longitude
