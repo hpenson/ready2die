@@ -65,7 +65,7 @@ class DiscretionsController < ApplicationController
     @discretion.title = params.fetch("title")
     @discretion.description = params.fetch("description")
     @discretion.instruction = params.fetch("instruction")
-    @discretion.user_id = params.fetch("user_id")
+    
     @discretion.apppointee_id = params.fetch("apppointee_id")
 
     if @discretion.valid?
