@@ -74,7 +74,11 @@
 
         <!-- Display remain.user_id start -->
         <td>
-          <%= remain.user.email %>
+          <% if remain.user.present? %>
+            <a href="/users/<%= remain.user.id %>">
+              <%= remain.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display remain.user_id end -->
 

@@ -61,7 +61,11 @@
       </dt>
       <!-- Display guest_id start -->
       <dd>
-        <%= @role.guest_id %>
+        <% if @role.guest.present? %>
+          <a href="/guests/<%= @role.guest_id %>">
+            <%= @role.guest.first_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display guest_id end -->
 

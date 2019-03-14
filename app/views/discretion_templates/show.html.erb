@@ -65,7 +65,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @discretion.user_id %>
+        <% if @discretion.user.present? %>
+          <a href="/users/<%= @discretion.user_id %>">
+            <%= @discretion.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -74,7 +78,11 @@
       </dt>
       <!-- Display apppointee_id start -->
       <dd>
-        <%= @discretion.apppointee_id %>
+        <% if @discretion.apppointee.present? %>
+          <a href="/appointees/<%= @discretion.apppointee_id %>">
+            <%= @discretion.apppointee.last_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display apppointee_id end -->
 

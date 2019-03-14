@@ -118,7 +118,11 @@
 
         <!-- Display executioner.user_id start -->
         <td>
-          <%= executioner.user.email %>
+          <% if executioner.user.present? %>
+            <a href="/users/<%= executioner.user.id %>">
+              <%= executioner.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display executioner.user_id end -->
 

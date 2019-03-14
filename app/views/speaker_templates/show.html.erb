@@ -43,7 +43,11 @@
       </dt>
       <!-- Display guest_id start -->
       <dd>
-        <%= @speaker.guest_id %>
+        <% if @speaker.guest.present? %>
+          <a href="/guests/<%= @speaker.guest_id %>">
+            <%= @speaker.guest.first_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display guest_id end -->
 

@@ -34,7 +34,11 @@
       </dt>
       <!-- Display guest_id start -->
       <dd>
-        <%= @pall_bearer.guest_id %>
+        <% if @pall_bearer.guest.present? %>
+          <a href="/guests/<%= @pall_bearer.guest_id %>">
+            <%= @pall_bearer.guest.first_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display guest_id end -->
 

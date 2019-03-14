@@ -74,7 +74,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @video.user_id %>
+        <% if @video.user.present? %>
+          <a href="/users/<%= @video.user_id %>">
+            <%= @video.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

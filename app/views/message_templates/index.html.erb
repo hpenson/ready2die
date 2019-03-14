@@ -142,7 +142,11 @@
 
         <!-- Display message.user_id start -->
         <td>
-          <%= message.user.email %>
+          <% if message.user.present? %>
+            <a href="/users/<%= message.user.id %>">
+              <%= message.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display message.user_id end -->
 

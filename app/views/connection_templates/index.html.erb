@@ -72,19 +72,31 @@
 
         <!-- Display connection.afriend_id start -->
         <td>
-          <%= connection.afriend.first_name %>
+          <% if connection.afriend.present? %>
+            <a href="/friends/<%= connection.afriend.id %>">
+              <%= connection.afriend.first_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display connection.afriend_id end -->
 
         <!-- Display connection.bfriend_id start -->
         <td>
-          <%= connection.bfriend.first_name %>
+          <% if connection.bfriend.present? %>
+            <a href="/friends/<%= connection.bfriend.id %>">
+              <%= connection.bfriend.first_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display connection.bfriend_id end -->
 
         <!-- Display connection.user_id start -->
         <td>
-          <%= connection.user.email %>
+          <% if connection.user.present? %>
+            <a href="/users/<%= connection.user.id %>">
+              <%= connection.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display connection.user_id end -->
 

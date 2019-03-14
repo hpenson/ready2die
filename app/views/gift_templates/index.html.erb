@@ -98,7 +98,11 @@
 
         <!-- Display gift.user_id start -->
         <td>
-          <%= gift.user.email %>
+          <% if gift.user.present? %>
+            <a href="/users/<%= gift.user.id %>">
+              <%= gift.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display gift.user_id end -->
 

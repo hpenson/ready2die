@@ -72,7 +72,11 @@
 
         <!-- Display speaker.guest_id start -->
         <td>
-          <%= speaker.guest.first_name %>
+          <% if speaker.guest.present? %>
+            <a href="/guests/<%= speaker.guest.id %>">
+              <%= speaker.guest.first_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display speaker.guest_id end -->
 

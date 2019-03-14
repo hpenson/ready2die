@@ -112,7 +112,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @message.user_id %>
+        <% if @message.user.present? %>
+          <a href="/users/<%= @message.user_id %>">
+            <%= @message.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

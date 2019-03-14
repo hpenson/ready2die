@@ -38,7 +38,11 @@
       </dt>
       <!-- Display venue_id start -->
       <dd>
-        <%= @service.venue_id %>
+        <% if @service.venue.present? %>
+          <a href="/venues/<%= @service.venue_id %>">
+            <%= @service.venue.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display venue_id end -->
 
@@ -47,7 +51,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @service.user_id %>
+        <% if @service.user.present? %>
+          <a href="/users/<%= @service.user_id %>">
+            <%= @service.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -56,7 +64,11 @@
       </dt>
       <!-- Display theme_id start -->
       <dd>
-        <%= @service.theme_id %>
+        <% if @service.theme.present? %>
+          <a href="/themes/<%= @service.theme_id %>">
+            <%= @service.theme.rank %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display theme_id end -->
 

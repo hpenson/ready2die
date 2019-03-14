@@ -47,7 +47,11 @@
       </dt>
       <!-- Display afriend_id start -->
       <dd>
-        <%= @connection.afriend_id %>
+        <% if @connection.afriend.present? %>
+          <a href="/friends/<%= @connection.afriend_id %>">
+            <%= @connection.afriend.first_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display afriend_id end -->
 
@@ -56,7 +60,11 @@
       </dt>
       <!-- Display bfriend_id start -->
       <dd>
-        <%= @connection.bfriend_id %>
+        <% if @connection.bfriend.present? %>
+          <a href="/friends/<%= @connection.bfriend_id %>">
+            <%= @connection.bfriend.first_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display bfriend_id end -->
 
@@ -65,7 +73,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @connection.user_id %>
+        <% if @connection.user.present? %>
+          <a href="/users/<%= @connection.user_id %>">
+            <%= @connection.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

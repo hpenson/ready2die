@@ -84,7 +84,11 @@
 
         <!-- Display role.guest_id start -->
         <td>
-          <%= role.guest.first_name %>
+          <% if role.guest.present? %>
+            <a href="/guests/<%= role.guest.id %>">
+              <%= role.guest.first_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display role.guest_id end -->
 

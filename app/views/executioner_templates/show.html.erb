@@ -94,7 +94,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @executioner.user_id %>
+        <% if @executioner.user.present? %>
+          <a href="/users/<%= @executioner.user_id %>">
+            <%= @executioner.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

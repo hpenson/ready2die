@@ -64,7 +64,11 @@
 
         <!-- Display mc.guest_id start -->
         <td>
-          <%= mc.guest.first_name %>
+          <% if mc.guest.present? %>
+            <a href="/guests/<%= mc.guest.id %>">
+              <%= mc.guest.first_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display mc.guest_id end -->
 

@@ -94,7 +94,11 @@
 
         <!-- Display video.user_id start -->
         <td>
-          <%= video.user.email %>
+          <% if video.user.present? %>
+            <a href="/users/<%= video.user.id %>">
+              <%= video.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display video.user_id end -->
 

@@ -88,13 +88,21 @@
 
         <!-- Display discretion.user_id start -->
         <td>
-          <%= discretion.user.email %>
+          <% if discretion.user.present? %>
+            <a href="/users/<%= discretion.user.id %>">
+              <%= discretion.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display discretion.user_id end -->
 
         <!-- Display discretion.apppointee_id start -->
         <td>
-          <%= discretion.apppointee.last_name %>
+          <% if discretion.apppointee.present? %>
+            <a href="/appointees/<%= discretion.apppointee.id %>">
+              <%= discretion.apppointee.last_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display discretion.apppointee_id end -->
 

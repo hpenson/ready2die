@@ -58,7 +58,11 @@
 
         <!-- Display pall_bearer.guest_id start -->
         <td>
-          <%= pall_bearer.guest.first_name %>
+          <% if pall_bearer.guest.present? %>
+            <a href="/guests/<%= pall_bearer.guest.id %>">
+              <%= pall_bearer.guest.first_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display pall_bearer.guest_id end -->
 

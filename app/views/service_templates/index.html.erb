@@ -70,19 +70,31 @@
 
         <!-- Display service.venue_id start -->
         <td>
-          <%= service.venue.name %>
+          <% if service.venue.present? %>
+            <a href="/venues/<%= service.venue.id %>">
+              <%= service.venue.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display service.venue_id end -->
 
         <!-- Display service.user_id start -->
         <td>
-          <%= service.user.email %>
+          <% if service.user.present? %>
+            <a href="/users/<%= service.user.id %>">
+              <%= service.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display service.user_id end -->
 
         <!-- Display service.theme_id start -->
         <td>
-          <%= service.theme.rank %>
+          <% if service.theme.present? %>
+            <a href="/themes/<%= service.theme.id %>">
+              <%= service.theme.rank %>
+            </a>
+          <% end %>
         </td>
         <!-- Display service.theme_id end -->
 

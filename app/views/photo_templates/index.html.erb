@@ -94,7 +94,11 @@
 
         <!-- Display photo.user_id start -->
         <td>
-          <%= photo.user.email %>
+          <% if photo.user.present? %>
+            <a href="/users/<%= photo.user.id %>">
+              <%= photo.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display photo.user_id end -->
 

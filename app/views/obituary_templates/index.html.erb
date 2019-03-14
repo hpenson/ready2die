@@ -78,7 +78,11 @@
 
         <!-- Display obituary.user_id start -->
         <td>
-          <%= obituary.user.email %>
+          <% if obituary.user.present? %>
+            <a href="/users/<%= obituary.user.id %>">
+              <%= obituary.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display obituary.user_id end -->
 

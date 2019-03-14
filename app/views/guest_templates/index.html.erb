@@ -108,7 +108,11 @@
 
         <!-- Display guest.user_id start -->
         <td>
-          <%= guest.user.email %>
+          <% if guest.user.present? %>
+            <a href="/users/<%= guest.user.id %>">
+              <%= guest.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display guest.user_id end -->
 

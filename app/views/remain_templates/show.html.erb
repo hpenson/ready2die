@@ -56,7 +56,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @remain.user_id %>
+        <% if @remain.user.present? %>
+          <a href="/users/<%= @remain.user_id %>">
+            <%= @remain.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

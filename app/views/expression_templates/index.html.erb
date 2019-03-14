@@ -94,7 +94,11 @@
 
         <!-- Display expression.user_id start -->
         <td>
-          <%= expression.user.email %>
+          <% if expression.user.present? %>
+            <a href="/users/<%= expression.user.id %>">
+              <%= expression.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display expression.user_id end -->
 

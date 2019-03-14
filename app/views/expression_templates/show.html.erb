@@ -74,7 +74,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @expression.user_id %>
+        <% if @expression.user.present? %>
+          <a href="/users/<%= @expression.user_id %>">
+            <%= @expression.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

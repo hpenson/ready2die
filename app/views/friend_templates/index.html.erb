@@ -118,7 +118,11 @@
 
         <!-- Display friend.user_id start -->
         <td>
-          <%= friend.user.email %>
+          <% if friend.user.present? %>
+            <a href="/users/<%= friend.user.id %>">
+              <%= friend.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display friend.user_id end -->
 

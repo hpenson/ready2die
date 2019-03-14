@@ -65,7 +65,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @song.user_id %>
+        <% if @song.user.present? %>
+          <a href="/users/<%= @song.user_id %>">
+            <%= @song.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

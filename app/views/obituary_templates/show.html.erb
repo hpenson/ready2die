@@ -56,7 +56,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @obituary.user_id %>
+        <% if @obituary.user.present? %>
+          <a href="/users/<%= @obituary.user_id %>">
+            <%= @obituary.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
