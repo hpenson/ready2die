@@ -10,7 +10,7 @@ class GiftsController < ApplicationController
   end
 
   def index
-    @gifts = Gift.all
+    @gifts = current_user.gifts.page(params[:page]).per(10)
 
     render("gift_templates/index.html.erb")
   end
