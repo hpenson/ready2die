@@ -5,6 +5,10 @@ class Mc < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :user,
+             :through => :service,
+             :source => :user
+
   # Validations
 
 end
