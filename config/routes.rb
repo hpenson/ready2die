@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Discretion resource:
+
+  # CREATE
+  get("/discretions/new", { :controller => "discretions", :action => "new_form" })
+  post("/create_discretion", { :controller => "discretions", :action => "create_row" })
+
+  # READ
+  get("/discretions", { :controller => "discretions", :action => "index" })
+  get("/discretions/:id_to_display", { :controller => "discretions", :action => "show" })
+
+  # UPDATE
+  get("/discretions/:prefill_with_id/edit", { :controller => "discretions", :action => "edit_form" })
+  post("/update_discretion/:id_to_modify", { :controller => "discretions", :action => "update_row" })
+
+  # DELETE
+  get("/delete_discretion/:id_to_remove", { :controller => "discretions", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Connection resource:
 
   # CREATE

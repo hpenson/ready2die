@@ -1,0 +1,100 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Discretion #<%= @discretion.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/discretions" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link discretion start -->
+      <div class="col">
+        <a href="/discretions/<%= @discretion.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit discretion
+        </a>
+      </div>
+      <!-- Edit link discretion end -->
+
+      <!-- Delete link discretion start -->
+      <div class="col">
+        <a href="/delete_discretion/<%= @discretion.id %>" class="btn btn-block btn-outline-secondary">
+          Delete discretion
+        </a>
+      </div>
+      <!-- Delete link discretion end -->
+    </div>
+
+    <dl>
+      <dt>
+        Title
+      </dt>
+      <!-- Display title start -->
+      <dd>
+        <%= @discretion.title %>
+      </dd>
+      <!-- Display title end -->
+
+      <dt>
+        Description
+      </dt>
+      <!-- Display description start -->
+      <dd>
+        <%= @discretion.description %>
+      </dd>
+      <!-- Display description end -->
+
+      <dt>
+        Instruction
+      </dt>
+      <!-- Display instruction start -->
+      <dd>
+        <%= @discretion.instruction %>
+      </dd>
+      <!-- Display instruction end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @discretion.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Apppointee
+      </dt>
+      <!-- Display apppointee_id start -->
+      <dd>
+        <%= @discretion.apppointee_id %>
+      </dd>
+      <!-- Display apppointee_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@discretion.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@discretion.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

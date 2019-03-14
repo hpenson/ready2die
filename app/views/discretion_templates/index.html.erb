@@ -1,0 +1,122 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All discretions
+    </h1>
+
+    <a href="/discretions/new" class="btn btn-block btn-outline-secondary">
+      Add a new discretion
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Title
+        </th>
+
+        <th>
+          Description
+        </th>
+
+        <th>
+          Instruction
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Apppointee
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @discretions.each do |discretion| %>
+      <tr>
+        <!-- Display discretion.id start -->
+        <td>
+          <%= discretion.id %>
+        </td>
+        <!-- Display discretion.id end -->
+
+        <!-- Display discretion.title start -->
+        <td>
+          <%= discretion.title %>
+        </td>
+        <!-- Display discretion.title end -->
+
+        <!-- Display discretion.description start -->
+        <td>
+          <%= discretion.description %>
+        </td>
+        <!-- Display discretion.description end -->
+
+        <!-- Display discretion.instruction start -->
+        <td>
+          <%= discretion.instruction %>
+        </td>
+        <!-- Display discretion.instruction end -->
+
+        <!-- Display discretion.user_id start -->
+        <td>
+          <%= discretion.user_id %>
+        </td>
+        <!-- Display discretion.user_id end -->
+
+        <!-- Display discretion.apppointee_id start -->
+        <td>
+          <%= discretion.apppointee_id %>
+        </td>
+        <!-- Display discretion.apppointee_id end -->
+
+        <!-- Display discretion.created_at start -->
+        <td>
+          <%= time_ago_in_words(discretion.created_at) %> ago
+        </td>
+        <!-- Display discretion.created_at end -->
+
+        <!-- Display discretion.updated_at start -->
+        <td>
+          <%= time_ago_in_words(discretion.updated_at) %> ago
+        </td>
+        <!-- Display discretion.updated_at end -->
+
+        <td>
+          <a href="/discretions/<%= discretion.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
