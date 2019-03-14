@@ -48,7 +48,7 @@ class VideosController < ApplicationController
     @video.description = params.fetch("description")
     @video.caption = params.fetch("caption")
     @video.rank = params.fetch("rank")
-    @video.user_id = params.fetch("user_id")
+    
 
     if @video.valid?
       @video.save
