@@ -10,6 +10,8 @@ RSpec.describe Speaker, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_one(:user) }
+
     end
 
     describe "Validations" do

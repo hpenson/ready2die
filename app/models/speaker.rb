@@ -5,6 +5,10 @@ class Speaker < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :user,
+             :through => :guest,
+             :source => :user
+
   # Validations
 
 end
