@@ -4,6 +4,8 @@ RSpec.describe Friend, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:connections) }
+
     it { should belong_to(:user) }
 
     end
