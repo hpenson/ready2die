@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Executioner resource:
+
+  # CREATE
+  get("/executioners/new", { :controller => "executioners", :action => "new_form" })
+  post("/create_executioner", { :controller => "executioners", :action => "create_row" })
+
+  # READ
+  get("/executioners", { :controller => "executioners", :action => "index" })
+  get("/executioners/:id_to_display", { :controller => "executioners", :action => "show" })
+
+  # UPDATE
+  get("/executioners/:prefill_with_id/edit", { :controller => "executioners", :action => "edit_form" })
+  post("/update_executioner/:id_to_modify", { :controller => "executioners", :action => "update_row" })
+
+  # DELETE
+  get("/delete_executioner/:id_to_remove", { :controller => "executioners", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Photo resource:
 
   # CREATE
