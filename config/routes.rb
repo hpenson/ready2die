@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Guest resource:
+
+  # CREATE
+  get("/guests/new", { :controller => "guests", :action => "new_form" })
+  post("/create_guest", { :controller => "guests", :action => "create_row" })
+
+  # READ
+  get("/guests", { :controller => "guests", :action => "index" })
+  get("/guests/:id_to_display", { :controller => "guests", :action => "show" })
+
+  # UPDATE
+  get("/guests/:prefill_with_id/edit", { :controller => "guests", :action => "edit_form" })
+  post("/update_guest/:id_to_modify", { :controller => "guests", :action => "update_row" })
+
+  # DELETE
+  get("/delete_guest/:id_to_remove", { :controller => "guests", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Theme resource:
 
   # CREATE
