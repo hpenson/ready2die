@@ -13,17 +13,21 @@
 
       <!-- Edit link song start -->
       <div class="col">
-        <a href="/songs/<%= @song.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit song
-        </a>
+        <% if current_user == @song.user %>
+          <a href="/songs/<%= @song.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit song
+          </a>
+        <% end %>
       </div>
       <!-- Edit link song end -->
 
       <!-- Delete link song start -->
       <div class="col">
-        <a href="/delete_song/<%= @song.id %>" class="btn btn-block btn-outline-secondary">
-          Delete song
-        </a>
+        <% if current_user == @song.user %>
+          <a href="/delete_song/<%= @song.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete song
+          </a>
+        <% end %>
       </div>
       <!-- Delete link song end -->
     </div>
