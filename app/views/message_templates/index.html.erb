@@ -10,21 +10,17 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "message_templates/messages_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 <div class="row mb-3">
   <div class="col-md-12">
     <%= render partial: "message_templates/all_photos_map" %>
   </div>
 </div>
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -90,61 +86,42 @@
 
       <% @messages.each do |message| %>
       <tr>
-        <!-- Display message.id start -->
         <td>
           <%= message.id %>
         </td>
-        <!-- Display message.id end -->
 
-        <!-- Display message.description start -->
         <td>
           <%= message.description %>
         </td>
-        <!-- Display message.description end -->
 
-        <!-- Display message.receipient start -->
         <td>
           <%= message.receipient %>
         </td>
-        <!-- Display message.receipient end -->
 
-        <!-- Display message.address start -->
         <td>
           <%= message.address %>
         </td>
-        <!-- Display message.address end -->
 
-        <!-- Display message.email start -->
         <td>
           <%= message.email %>
         </td>
-        <!-- Display message.email end -->
 
-        <!-- Display message.phone start -->
         <td>
           <%= message.phone %>
         </td>
-        <!-- Display message.phone end -->
 
-        <!-- Display message.content start -->
         <td>
           <%= message.content %>
         </td>
-        <!-- Display message.content end -->
 
-        <!-- Display message.audio start -->
         <td>
           <%= message.audio %>
         </td>
-        <!-- Display message.audio end -->
 
-        <!-- Display message.video start -->
         <td>
           <%= message.video %>
         </td>
-        <!-- Display message.video end -->
 
-        <!-- Display message.user_id start -->
         <td>
           <% if message.user.present? %>
             <a href="/users/<%= message.user.id %>">
@@ -152,25 +129,18 @@
             </a>
           <% end %>
         </td>
-        <!-- Display message.user_id end -->
 
-        <!-- Display message.photo start -->
         <td>
           <img src='<%= message.photo %>' class='img-fluid'>
         </td>
-        <!-- Display message.photo end -->
 
-        <!-- Display message.created_at start -->
         <td>
           <%= time_ago_in_words(message.created_at) %> ago
         </td>
-        <!-- Display message.created_at end -->
 
-        <!-- Display message.updated_at start -->
         <td>
           <%= time_ago_in_words(message.updated_at) %> ago
         </td>
-        <!-- Display message.updated_at end -->
 
         <td>
           <a href="/messages/<%= message.id %>">

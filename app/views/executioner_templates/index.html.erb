@@ -10,21 +10,17 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "executioner_templates/executioners_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 <div class="row mb-3">
   <div class="col-md-12">
     <%= render partial: "executioner_templates/all_photos_map" %>
   </div>
 </div>
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -78,49 +74,34 @@
 
       <% @executioners.each do |executioner| %>
       <tr>
-        <!-- Display executioner.id start -->
         <td>
           <%= executioner.id %>
         </td>
-        <!-- Display executioner.id end -->
 
-        <!-- Display executioner.last_name start -->
         <td>
           <%= executioner.last_name %>
         </td>
-        <!-- Display executioner.last_name end -->
 
-        <!-- Display executioner.first_name start -->
         <td>
           <%= executioner.first_name %>
         </td>
-        <!-- Display executioner.first_name end -->
 
-        <!-- Display executioner.address start -->
         <td>
           <%= executioner.address %>
         </td>
-        <!-- Display executioner.address end -->
 
-        <!-- Display executioner.email start -->
         <td>
           <%= executioner.email %>
         </td>
-        <!-- Display executioner.email end -->
 
-        <!-- Display executioner.phone start -->
         <td>
           <%= executioner.phone %>
         </td>
-        <!-- Display executioner.phone end -->
 
-        <!-- Display executioner.instruction start -->
         <td>
           <%= executioner.instruction %>
         </td>
-        <!-- Display executioner.instruction end -->
 
-        <!-- Display executioner.user_id start -->
         <td>
           <% if executioner.user.present? %>
             <a href="/users/<%= executioner.user.id %>">
@@ -128,19 +109,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display executioner.user_id end -->
 
-        <!-- Display executioner.created_at start -->
         <td>
           <%= time_ago_in_words(executioner.created_at) %> ago
         </td>
-        <!-- Display executioner.created_at end -->
 
-        <!-- Display executioner.updated_at start -->
         <td>
           <%= time_ago_in_words(executioner.updated_at) %> ago
         </td>
-        <!-- Display executioner.updated_at end -->
 
         <td>
           <a href="/executioners/<%= executioner.id %>">

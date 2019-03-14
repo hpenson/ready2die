@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "pall_bearer_templates/pall_bearers_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -54,13 +50,10 @@
 
       <% @pall_bearers.each do |pall_bearer| %>
       <tr>
-        <!-- Display pall_bearer.id start -->
         <td>
           <%= pall_bearer.id %>
         </td>
-        <!-- Display pall_bearer.id end -->
 
-        <!-- Display pall_bearer.guest_id start -->
         <td>
           <% if pall_bearer.guest.present? %>
             <a href="/guests/<%= pall_bearer.guest.id %>">
@@ -68,25 +61,18 @@
             </a>
           <% end %>
         </td>
-        <!-- Display pall_bearer.guest_id end -->
 
-        <!-- Display pall_bearer.rank start -->
         <td>
           <%= pall_bearer.rank %>
         </td>
-        <!-- Display pall_bearer.rank end -->
 
-        <!-- Display pall_bearer.created_at start -->
         <td>
           <%= time_ago_in_words(pall_bearer.created_at) %> ago
         </td>
-        <!-- Display pall_bearer.created_at end -->
 
-        <!-- Display pall_bearer.updated_at start -->
         <td>
           <%= time_ago_in_words(pall_bearer.updated_at) %> ago
         </td>
-        <!-- Display pall_bearer.updated_at end -->
 
         <td>
           <a href="/pall_bearers/<%= pall_bearer.id %>">

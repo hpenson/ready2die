@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.videos.each do |video| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/videos/<%= video.id %>">
           <%= video.upload %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

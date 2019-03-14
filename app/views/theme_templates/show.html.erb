@@ -11,55 +11,44 @@
         </a>
       </div>
 
-      <!-- Edit link theme start -->
       <div class="col">
         <a href="/themes/<%= @theme.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit theme
         </a>
       </div>
-      <!-- Edit link theme end -->
 
-      <!-- Delete link theme start -->
       <div class="col">
         <a href="/delete_theme/<%= @theme.id %>" class="btn btn-block btn-outline-secondary">
           Delete theme
         </a>
       </div>
-      <!-- Delete link theme end -->
     </div>
 
     <dl>
       <dt>
         Rank
       </dt>
-      <!-- Display rank start -->
       <dd>
         <%= @theme.rank %>
       </dd>
-      <!-- Display rank end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@theme.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@theme.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "theme_templates/theme_services" %>
@@ -71,4 +60,3 @@
     <%= render partial: "theme_templates/theme_users" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

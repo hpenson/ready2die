@@ -10,21 +10,17 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "gift_templates/gifts_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 <div class="row mb-3">
   <div class="col-md-12">
     <%= render partial: "gift_templates/all_photos_map" %>
   </div>
 </div>
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -70,37 +66,26 @@
 
       <% @gifts.each do |gift| %>
       <tr>
-        <!-- Display gift.id start -->
         <td>
           <%= gift.id %>
         </td>
-        <!-- Display gift.id end -->
 
-        <!-- Display gift.receipient start -->
         <td>
           <%= gift.receipient %>
         </td>
-        <!-- Display gift.receipient end -->
 
-        <!-- Display gift.address start -->
         <td>
           <%= gift.address %>
         </td>
-        <!-- Display gift.address end -->
 
-        <!-- Display gift.email start -->
         <td>
           <%= gift.email %>
         </td>
-        <!-- Display gift.email end -->
 
-        <!-- Display gift.kind start -->
         <td>
           <%= gift.kind %>
         </td>
-        <!-- Display gift.kind end -->
 
-        <!-- Display gift.user_id start -->
         <td>
           <% if gift.user.present? %>
             <a href="/users/<%= gift.user.id %>">
@@ -108,19 +93,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display gift.user_id end -->
 
-        <!-- Display gift.created_at start -->
         <td>
           <%= time_ago_in_words(gift.created_at) %> ago
         </td>
-        <!-- Display gift.created_at end -->
 
-        <!-- Display gift.updated_at start -->
         <td>
           <%= time_ago_in_words(gift.updated_at) %> ago
         </td>
-        <!-- Display gift.updated_at end -->
 
         <td>
           <a href="/gifts/<%= gift.id %>">

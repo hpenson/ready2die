@@ -11,75 +11,60 @@
         </a>
       </div>
 
-      <!-- Edit link venue start -->
       <div class="col">
         <a href="/venues/<%= @venue.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit venue
         </a>
       </div>
-      <!-- Edit link venue end -->
 
-      <!-- Delete link venue start -->
       <div class="col">
         <a href="/delete_venue/<%= @venue.id %>" class="btn btn-block btn-outline-secondary">
           Delete venue
         </a>
       </div>
-      <!-- Delete link venue end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @venue.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Address
       </dt>
-      <!-- Display address start -->
       <dd>
         <div>
           <%= render partial: "venue_templates/one_photo_map" %>
         </div>
       </dd>
-      <!-- Display address end -->
 
       <dt>
         Rank
       </dt>
-      <!-- Display rank start -->
       <dd>
         <%= @venue.rank %>
       </dd>
-      <!-- Display rank end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@venue.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@venue.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "venue_templates/venue_services" %>
@@ -91,4 +76,3 @@
     <%= render partial: "venue_templates/venue_users" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

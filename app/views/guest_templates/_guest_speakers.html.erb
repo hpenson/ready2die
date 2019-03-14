@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @guest.speakers.each do |speaker| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/speakers/<%= speaker.id %>">
           <%= speaker.rank %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_speaker_from_guest/<%= speaker.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="guest_speakers_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "guest_templates/guest_speakers_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

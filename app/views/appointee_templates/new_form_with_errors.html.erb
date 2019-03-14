@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @appointee.present? %>
   <% if @appointee.errors.any? %>
     <% @appointee.errors.full_messages.each do |message| %>
@@ -16,81 +15,55 @@
 
 <hr>
 
-<!-- Form appointee start -->
 <form action="/create_appointee" method="post">
-<!-- Form appointee end -->
 
-  <!-- Label and input for last_name start -->
   <div class="form-group">
     <label for="last_name">
       Last name
     </label>
 
-    <!-- Input for last_name start -->
     <input type="text" id="last_name" name="last_name" class="form-control" value="<%= @appointee.last_name %>">
-    <!-- Input for last_name end -->
   </div>
-  <!-- Label and input for last_name end -->
 
-  <!-- Label and input for first_name start -->
   <div class="form-group">
     <label for="first_name">
       First name
     </label>
 
-    <!-- Input for first_name start -->
     <input type="text" id="first_name" name="first_name" class="form-control" value="<%= @appointee.first_name %>">
-    <!-- Input for first_name end -->
   </div>
-  <!-- Label and input for first_name end -->
 
-  <!-- Label and input for email start -->
   <div class="form-group">
     <label for="email">
       Email
     </label>
 
-    <!-- Input for email start -->
     <input type="text" id="email" name="email" class="form-control" value="<%= @appointee.email %>">
-    <!-- Input for email end -->
   </div>
-  <!-- Label and input for email end -->
 
-  <!-- Label and input for address start -->
   <div class="form-group">
     <label for="address">
       Address
     </label>
 
-    <!-- Input for address start -->
     <input type="text" id="address" name="address" class="form-control" value="<%= @appointee.address %>">
-    <!-- Input for address end -->
   </div>
-  <!-- Label and input for address end -->
 
-  <!-- Label and input for phone start -->
   <div class="form-group">
     <label for="phone">
       Phone
     </label>
 
-    <!-- Input for phone start -->
     <input type="text" id="phone" name="phone" class="form-control" value="<%= @appointee.phone %>">
-    <!-- Input for phone end -->
   </div>
-  <!-- Label and input for phone end -->
 
-  <!-- Label and input for discretion_id start -->
   <div class="form-group">
     <label for="discretion_id">
       Discretion
     </label>
 
-    <!-- Input for discretion_id start -->
     <input type="text" id="discretion_id" name="discretion_id" class="form-control" value="<%= @appointee.discretion_id %>">
-    <!-- Input for discretion_id end -->
   </div>
-  <!-- Label and input for discretion_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create appointee

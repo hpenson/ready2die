@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link service start -->
       <div class="col">
         <% if current_user == @service.user %>
           <a href="/services/<%= @service.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link service end -->
 
-      <!-- Delete link service start -->
       <div class="col">
         <% if current_user == @service.user %>
           <a href="/delete_service/<%= @service.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link service end -->
     </div>
 
     <dl>
       <dt>
         Venue
       </dt>
-      <!-- Display venue_id start -->
       <dd>
         <% if @service.venue.present? %>
           <a href="/venues/<%= @service.venue_id %>">
@@ -44,12 +39,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display venue_id end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @service.user.present? %>
           <a href="/users/<%= @service.user_id %>">
@@ -57,12 +50,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Theme
       </dt>
-      <!-- Display theme_id start -->
       <dd>
         <% if @service.theme.present? %>
           <a href="/themes/<%= @service.theme_id %>">
@@ -70,46 +61,35 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display theme_id end -->
 
       <dt>
         Rank
       </dt>
-      <!-- Display rank start -->
       <dd>
         <%= @service.rank %>
       </dd>
-      <!-- Display rank end -->
 
       <dt>
         Casket
       </dt>
-      <!-- Display casket start -->
       <dd>
         <%= @service.casket %>
       </dd>
-      <!-- Display casket end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@service.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@service.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

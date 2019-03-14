@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @appointee.discretions.each do |discretion| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/discretions/<%= discretion.id %>">
           <%= discretion.title %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == discretion.user %>
           <a href="/delete_discretion_from_appointee/<%= discretion.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="appointee_discretions_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "appointee_templates/appointee_discretions_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

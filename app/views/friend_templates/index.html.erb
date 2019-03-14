@@ -10,21 +10,17 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "friend_templates/friends_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 <div class="row mb-3">
   <div class="col-md-12">
     <%= render partial: "friend_templates/all_photos_map" %>
   </div>
 </div>
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -78,49 +74,34 @@
 
       <% @friends.each do |friend| %>
       <tr>
-        <!-- Display friend.id start -->
         <td>
           <%= friend.id %>
         </td>
-        <!-- Display friend.id end -->
 
-        <!-- Display friend.first_name start -->
         <td>
           <%= friend.first_name %>
         </td>
-        <!-- Display friend.first_name end -->
 
-        <!-- Display friend.last_name start -->
         <td>
           <%= friend.last_name %>
         </td>
-        <!-- Display friend.last_name end -->
 
-        <!-- Display friend.address start -->
         <td>
           <%= friend.address %>
         </td>
-        <!-- Display friend.address end -->
 
-        <!-- Display friend.email start -->
         <td>
           <%= friend.email %>
         </td>
-        <!-- Display friend.email end -->
 
-        <!-- Display friend.phone start -->
         <td>
           <%= friend.phone %>
         </td>
-        <!-- Display friend.phone end -->
 
-        <!-- Display friend.image start -->
         <td>
           <img src='<%= friend.image %>' class='img-fluid'>
         </td>
-        <!-- Display friend.image end -->
 
-        <!-- Display friend.user_id start -->
         <td>
           <% if friend.user.present? %>
             <a href="/users/<%= friend.user.id %>">
@@ -128,19 +109,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display friend.user_id end -->
 
-        <!-- Display friend.created_at start -->
         <td>
           <%= time_ago_in_words(friend.created_at) %> ago
         </td>
-        <!-- Display friend.created_at end -->
 
-        <!-- Display friend.updated_at start -->
         <td>
           <%= time_ago_in_words(friend.updated_at) %> ago
         </td>
-        <!-- Display friend.updated_at end -->
 
         <td>
           <a href="/friends/<%= friend.id %>">

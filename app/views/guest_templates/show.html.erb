@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link guest start -->
       <div class="col">
         <% if current_user == @guest.user %>
           <a href="/guests/<%= @guest.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link guest end -->
 
-      <!-- Delete link guest start -->
       <div class="col">
         <% if current_user == @guest.user %>
           <a href="/delete_guest/<%= @guest.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,61 +26,49 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link guest end -->
     </div>
 
     <dl>
       <dt>
         First name
       </dt>
-      <!-- Display first_name start -->
       <dd>
         <%= @guest.first_name %>
       </dd>
-      <!-- Display first_name end -->
 
       <dt>
         Last name
       </dt>
-      <!-- Display last_name start -->
       <dd>
         <%= @guest.last_name %>
       </dd>
-      <!-- Display last_name end -->
 
       <dt>
         Address
       </dt>
-      <!-- Display address start -->
       <dd>
         <div>
           <%= render partial: "guest_templates/one_photo_map" %>
         </div>
       </dd>
-      <!-- Display address end -->
 
       <dt>
         Email
       </dt>
-      <!-- Display email start -->
       <dd>
         <%= @guest.email %>
       </dd>
-      <!-- Display email end -->
 
       <dt>
         Phone
       </dt>
-      <!-- Display phone start -->
       <dd>
         <%= @guest.phone %>
       </dd>
-      <!-- Display phone end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @guest.user.present? %>
           <a href="/users/<%= @guest.user_id %>">
@@ -91,30 +76,24 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@guest.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@guest.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "guest_templates/guest_speakers" %>
@@ -126,4 +105,3 @@
     <%= render partial: "guest_templates/guest_roles" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

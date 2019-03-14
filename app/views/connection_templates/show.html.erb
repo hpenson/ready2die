@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link connection start -->
       <div class="col">
         <% if current_user == @connection.user %>
           <a href="/connections/<%= @connection.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link connection end -->
 
-      <!-- Delete link connection start -->
       <div class="col">
         <% if current_user == @connection.user %>
           <a href="/delete_connection/<%= @connection.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,23 +26,19 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link connection end -->
     </div>
 
     <dl>
       <dt>
         Why
       </dt>
-      <!-- Display why start -->
       <dd>
         <%= @connection.why %>
       </dd>
-      <!-- Display why end -->
 
       <dt>
         Afriend
       </dt>
-      <!-- Display afriend_id start -->
       <dd>
         <% if @connection.afriend.present? %>
           <a href="/friends/<%= @connection.afriend_id %>">
@@ -53,12 +46,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display afriend_id end -->
 
       <dt>
         Bfriend
       </dt>
-      <!-- Display bfriend_id start -->
       <dd>
         <% if @connection.bfriend.present? %>
           <a href="/friends/<%= @connection.bfriend_id %>">
@@ -66,12 +57,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display bfriend_id end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @connection.user.present? %>
           <a href="/users/<%= @connection.user_id %>">
@@ -79,28 +68,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@connection.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@connection.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

@@ -10,21 +10,17 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "appointee_templates/appointees_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 <div class="row mb-3">
   <div class="col-md-12">
     <%= render partial: "appointee_templates/all_photos_map" %>
   </div>
 </div>
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -74,59 +70,41 @@
 
       <% @appointees.each do |appointee| %>
       <tr>
-        <!-- Display appointee.id start -->
         <td>
           <%= appointee.id %>
         </td>
-        <!-- Display appointee.id end -->
 
-        <!-- Display appointee.last_name start -->
         <td>
           <%= appointee.last_name %>
         </td>
-        <!-- Display appointee.last_name end -->
 
-        <!-- Display appointee.first_name start -->
         <td>
           <%= appointee.first_name %>
         </td>
-        <!-- Display appointee.first_name end -->
 
-        <!-- Display appointee.email start -->
         <td>
           <%= appointee.email %>
         </td>
-        <!-- Display appointee.email end -->
 
-        <!-- Display appointee.address start -->
         <td>
           <%= appointee.address %>
         </td>
-        <!-- Display appointee.address end -->
 
-        <!-- Display appointee.phone start -->
         <td>
           <%= appointee.phone %>
         </td>
-        <!-- Display appointee.phone end -->
 
-        <!-- Display appointee.discretion_id start -->
         <td>
           <%= appointee.discretion_id %>
         </td>
-        <!-- Display appointee.discretion_id end -->
 
-        <!-- Display appointee.created_at start -->
         <td>
           <%= time_ago_in_words(appointee.created_at) %> ago
         </td>
-        <!-- Display appointee.created_at end -->
 
-        <!-- Display appointee.updated_at start -->
         <td>
           <%= time_ago_in_words(appointee.updated_at) %> ago
         </td>
-        <!-- Display appointee.updated_at end -->
 
         <td>
           <a href="/appointees/<%= appointee.id %>">

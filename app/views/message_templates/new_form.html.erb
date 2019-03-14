@@ -5,123 +5,81 @@
 
 <hr>
 
-<!-- Form message start -->
 <form action="/create_message" method="post" enctype="multipart/form-data">
-<!-- Form message end -->
 
-  <!-- Label and input for description start -->
   <div class="form-group">
     <label for="description">
       Description
     </label>
 
-    <!-- Input for description start -->
     <input type="text" id="description" name="description" class="form-control">
-    <!-- Input for description end -->
   </div>
-  <!-- Label and input for description end -->
 
-  <!-- Label and input for receipient start -->
   <div class="form-group">
     <label for="receipient">
       Receipient
     </label>
 
-    <!-- Input for receipient start -->
     <input type="text" id="receipient" name="receipient" class="form-control">
-    <!-- Input for receipient end -->
   </div>
-  <!-- Label and input for receipient end -->
 
-  <!-- Label and input for address start -->
   <div class="form-group">
     <label for="address">
       Address
     </label>
 
-    <!-- Input for address start -->
     <input type="text" id="address" name="address" class="form-control">
-    <!-- Input for address end -->
   </div>
-  <!-- Label and input for address end -->
 
-  <!-- Label and input for email start -->
   <div class="form-group">
     <label for="email">
       Email
     </label>
 
-    <!-- Input for email start -->
     <input type="text" id="email" name="email" class="form-control">
-    <!-- Input for email end -->
   </div>
-  <!-- Label and input for email end -->
 
-  <!-- Label and input for phone start -->
   <div class="form-group">
     <label for="phone">
       Phone
     </label>
 
-    <!-- Input for phone start -->
     <input type="text" id="phone" name="phone" class="form-control">
-    <!-- Input for phone end -->
   </div>
-  <!-- Label and input for phone end -->
 
-  <!-- Label and input for content start -->
   <div class="form-group">
     <label for="content">
       Content
     </label>
 
-    <!-- Input for content start -->
     <input type="text" id="content" name="content" class="form-control">
-    <!-- Input for content end -->
   </div>
-  <!-- Label and input for content end -->
 
-  <!-- Label and input for audio start -->
   <div class="form-group">
     <label for="audio">
       Audio
     </label>
 
-    <!-- Input for audio start -->
     <input type="text" id="audio" name="audio" class="form-control">
-    <!-- Input for audio end -->
   </div>
-  <!-- Label and input for audio end -->
 
-  <!-- Label and input for video start -->
   <div class="form-group">
     <label for="video">
       Video
     </label>
 
-    <!-- Input for video start -->
     <input type="text" id="video" name="video" class="form-control">
-    <!-- Input for video end -->
   </div>
-  <!-- Label and input for video end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for photo start -->
   <div class="form-group">
     <label for="photo">
       Photo
     </label>
 
-    <!-- Input for photo start -->
     <input type="file" id="photo" name="photo" class="form-control">
-    <!-- Input for photo end -->
   </div>
-  <!-- Label and input for photo end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create message

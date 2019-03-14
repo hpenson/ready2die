@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link song start -->
       <div class="col">
         <% if current_user == @song.user %>
           <a href="/songs/<%= @song.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link song end -->
 
-      <!-- Delete link song start -->
       <div class="col">
         <% if current_user == @song.user %>
           <a href="/delete_song/<%= @song.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,41 +26,33 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link song end -->
     </div>
 
     <dl>
       <dt>
         Title
       </dt>
-      <!-- Display title start -->
       <dd>
         <%= @song.title %>
       </dd>
-      <!-- Display title end -->
 
       <dt>
         Artist
       </dt>
-      <!-- Display artist start -->
       <dd>
         <%= @song.artist %>
       </dd>
-      <!-- Display artist end -->
 
       <dt>
         Rank
       </dt>
-      <!-- Display rank start -->
       <dd>
         <%= @song.rank %>
       </dd>
-      <!-- Display rank end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @song.user.present? %>
           <a href="/users/<%= @song.user_id %>">
@@ -71,28 +60,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@song.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@song.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

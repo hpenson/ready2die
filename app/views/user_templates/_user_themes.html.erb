@@ -6,11 +6,9 @@
   <ul class="list-group list-group-flush">
     <% @user.themes.each do |theme| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/themes/<%= theme.id %>">
           <%= theme.rank %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

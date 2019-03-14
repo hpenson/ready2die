@@ -5,51 +5,33 @@
 
 <hr>
 
-<!-- Form connection start -->
 <form action="/create_connection" method="post">
-<!-- Form connection end -->
 
-  <!-- Label and input for why start -->
   <div class="form-group">
     <label for="why">
       Why
     </label>
 
-    <!-- Input for why start -->
     <input type="text" id="why" name="why" class="form-control">
-    <!-- Input for why end -->
   </div>
-  <!-- Label and input for why end -->
 
-  <!-- Label and input for afriend_id start -->
   <div class="form-group">
     <label for="afriend_id">
       Afriend
     </label>
 
-    <!-- Input for afriend_id start -->
     <%= select_tag(:afriend_id, options_from_collection_for_select(Friend.all, :id, :first_name, @connection.afriend_id), :class => "form-control") %>
-    <!-- Input for afriend_id end -->
   </div>
-  <!-- Label and input for afriend_id end -->
 
-  <!-- Label and input for bfriend_id start -->
   <div class="form-group">
     <label for="bfriend_id">
       Bfriend
     </label>
 
-    <!-- Input for bfriend_id start -->
     <%= select_tag(:bfriend_id, options_from_collection_for_select(Friend.all, :id, :first_name, @connection.bfriend_id), :class => "form-control") %>
-    <!-- Input for bfriend_id end -->
   </div>
-  <!-- Label and input for bfriend_id end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create connection

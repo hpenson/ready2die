@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.discretions.each do |discretion| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/discretions/<%= discretion.id %>">
           <%= discretion.title %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

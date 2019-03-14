@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.obituaries.each do |obituary| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/obituaries/<%= obituary.id %>">
           <%= obituary.description %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

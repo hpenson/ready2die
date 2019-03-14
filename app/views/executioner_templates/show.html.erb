@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link executioner start -->
       <div class="col">
         <% if current_user == @executioner.user %>
           <a href="/executioners/<%= @executioner.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link executioner end -->
 
-      <!-- Delete link executioner start -->
       <div class="col">
         <% if current_user == @executioner.user %>
           <a href="/delete_executioner/<%= @executioner.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,70 +26,56 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link executioner end -->
     </div>
 
     <dl>
       <dt>
         Last name
       </dt>
-      <!-- Display last_name start -->
       <dd>
         <%= @executioner.last_name %>
       </dd>
-      <!-- Display last_name end -->
 
       <dt>
         First name
       </dt>
-      <!-- Display first_name start -->
       <dd>
         <%= @executioner.first_name %>
       </dd>
-      <!-- Display first_name end -->
 
       <dt>
         Address
       </dt>
-      <!-- Display address start -->
       <dd>
         <div>
           <%= render partial: "executioner_templates/one_photo_map" %>
         </div>
       </dd>
-      <!-- Display address end -->
 
       <dt>
         Email
       </dt>
-      <!-- Display email start -->
       <dd>
         <%= @executioner.email %>
       </dd>
-      <!-- Display email end -->
 
       <dt>
         Phone
       </dt>
-      <!-- Display phone start -->
       <dd>
         <%= @executioner.phone %>
       </dd>
-      <!-- Display phone end -->
 
       <dt>
         Instruction
       </dt>
-      <!-- Display instruction start -->
       <dd>
         <%= @executioner.instruction %>
       </dd>
-      <!-- Display instruction end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @executioner.user.present? %>
           <a href="/users/<%= @executioner.user_id %>">
@@ -100,28 +83,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@executioner.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@executioner.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link obituary start -->
       <div class="col">
         <% if current_user == @obituary.user %>
           <a href="/obituaries/<%= @obituary.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link obituary end -->
 
-      <!-- Delete link obituary start -->
       <div class="col">
         <% if current_user == @obituary.user %>
           <a href="/delete_obituary/<%= @obituary.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,32 +26,26 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link obituary end -->
     </div>
 
     <dl>
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @obituary.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         Outlet
       </dt>
-      <!-- Display outlet start -->
       <dd>
         <%= @obituary.outlet %>
       </dd>
-      <!-- Display outlet end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @obituary.user.present? %>
           <a href="/users/<%= @obituary.user_id %>">
@@ -62,37 +53,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Rank
       </dt>
-      <!-- Display rank start -->
       <dd>
         <%= @obituary.rank %>
       </dd>
-      <!-- Display rank end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@obituary.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@obituary.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

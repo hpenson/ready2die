@@ -5,51 +5,33 @@
 
 <hr>
 
-<!-- Form song start -->
 <form action="/create_song" method="post">
-<!-- Form song end -->
 
-  <!-- Label and input for title start -->
   <div class="form-group">
     <label for="title">
       Title
     </label>
 
-    <!-- Input for title start -->
     <input type="text" id="title" name="title" class="form-control">
-    <!-- Input for title end -->
   </div>
-  <!-- Label and input for title end -->
 
-  <!-- Label and input for artist start -->
   <div class="form-group">
     <label for="artist">
       Artist
     </label>
 
-    <!-- Input for artist start -->
     <input type="text" id="artist" name="artist" class="form-control">
-    <!-- Input for artist end -->
   </div>
-  <!-- Label and input for artist end -->
 
-  <!-- Label and input for rank start -->
   <div class="form-group">
     <label for="rank">
       Rank
     </label>
 
-    <!-- Input for rank start -->
     <input type="text" id="rank" name="rank" class="form-control">
-    <!-- Input for rank end -->
   </div>
-  <!-- Label and input for rank end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create song

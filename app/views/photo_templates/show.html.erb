@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link photo start -->
       <div class="col">
         <% if current_user == @photo.user %>
           <a href="/photos/<%= @photo.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link photo end -->
 
-      <!-- Delete link photo start -->
       <div class="col">
         <% if current_user == @photo.user %>
           <a href="/delete_photo/<%= @photo.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,50 +26,40 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link photo end -->
     </div>
 
     <dl>
       <dt>
         Image
       </dt>
-      <!-- Display image start -->
       <dd>
         <img src="<%= @photo.image %>" class="img-fluid">
       </dd>
-      <!-- Display image end -->
 
       <dt>
         Caption
       </dt>
-      <!-- Display caption start -->
       <dd>
         <%= @photo.caption %>
       </dd>
-      <!-- Display caption end -->
 
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @photo.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         Rank
       </dt>
-      <!-- Display rank start -->
       <dd>
         <%= @photo.rank %>
       </dd>
-      <!-- Display rank end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @photo.user.present? %>
           <a href="/users/<%= @photo.user_id %>">
@@ -80,28 +67,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@photo.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@photo.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

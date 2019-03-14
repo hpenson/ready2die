@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "song_templates/songs_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -62,31 +58,22 @@
 
       <% @songs.each do |song| %>
       <tr>
-        <!-- Display song.id start -->
         <td>
           <%= song.id %>
         </td>
-        <!-- Display song.id end -->
 
-        <!-- Display song.title start -->
         <td>
           <%= song.title %>
         </td>
-        <!-- Display song.title end -->
 
-        <!-- Display song.artist start -->
         <td>
           <%= song.artist %>
         </td>
-        <!-- Display song.artist end -->
 
-        <!-- Display song.rank start -->
         <td>
           <%= song.rank %>
         </td>
-        <!-- Display song.rank end -->
 
-        <!-- Display song.user_id start -->
         <td>
           <% if song.user.present? %>
             <a href="/users/<%= song.user.id %>">
@@ -94,19 +81,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display song.user_id end -->
 
-        <!-- Display song.created_at start -->
         <td>
           <%= time_ago_in_words(song.created_at) %> ago
         </td>
-        <!-- Display song.created_at end -->
 
-        <!-- Display song.updated_at start -->
         <td>
           <%= time_ago_in_words(song.updated_at) %> ago
         </td>
-        <!-- Display song.updated_at end -->
 
         <td>
           <a href="/songs/<%= song.id %>">

@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @gift.present? %>
   <% if @gift.errors.any? %>
     <% @gift.errors.full_messages.each do |message| %>
@@ -16,63 +15,41 @@
 
 <hr>
 
-<!-- Form gift start -->
 <form action="/create_gift" method="post">
-<!-- Form gift end -->
 
-  <!-- Label and input for receipient start -->
   <div class="form-group">
     <label for="receipient">
       Receipient
     </label>
 
-    <!-- Input for receipient start -->
     <input type="text" id="receipient" name="receipient" class="form-control" value="<%= @gift.receipient %>">
-    <!-- Input for receipient end -->
   </div>
-  <!-- Label and input for receipient end -->
 
-  <!-- Label and input for address start -->
   <div class="form-group">
     <label for="address">
       Address
     </label>
 
-    <!-- Input for address start -->
     <input type="text" id="address" name="address" class="form-control" value="<%= @gift.address %>">
-    <!-- Input for address end -->
   </div>
-  <!-- Label and input for address end -->
 
-  <!-- Label and input for email start -->
   <div class="form-group">
     <label for="email">
       Email
     </label>
 
-    <!-- Input for email start -->
     <input type="text" id="email" name="email" class="form-control" value="<%= @gift.email %>">
-    <!-- Input for email end -->
   </div>
-  <!-- Label and input for email end -->
 
-  <!-- Label and input for kind start -->
   <div class="form-group">
     <label for="kind">
       Kind
     </label>
 
-    <!-- Input for kind start -->
     <input type="text" id="kind" name="kind" class="form-control" value="<%= @gift.kind %>">
-    <!-- Input for kind end -->
   </div>
-  <!-- Label and input for kind end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create gift

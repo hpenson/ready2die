@@ -5,33 +5,23 @@
 
 <hr>
 
-<!-- Form mc start -->
 <form action="/create_mc" method="post">
-<!-- Form mc end -->
 
-  <!-- Label and input for rank start -->
   <div class="form-group">
     <label for="rank">
       Rank
     </label>
 
-    <!-- Input for rank start -->
     <input type="text" id="rank" name="rank" class="form-control">
-    <!-- Input for rank end -->
   </div>
-  <!-- Label and input for rank end -->
 
-  <!-- Label and input for guest_id start -->
   <div class="form-group">
     <label for="guest_id">
       Guest
     </label>
 
-    <!-- Input for guest_id start -->
     <%= select_tag(:guest_id, options_from_collection_for_select(Guest.all, :id, :first_name, @mc.guest_id), :class => "form-control") %>
-    <!-- Input for guest_id end -->
   </div>
-  <!-- Label and input for guest_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create mc

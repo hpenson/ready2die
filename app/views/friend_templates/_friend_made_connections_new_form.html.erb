@@ -1,47 +1,30 @@
-<!-- Form connection start -->
 <form action="/create_connection_from_friend" method="post">
-<!-- Form connection end -->
 
-  <!-- Label and input for why start -->
   <div class="form-group">
     <label for="why">
       Why
     </label>
 
-    <!-- Input for why start -->
     <input type="text" id="why" name="why" class="form-control" value="<%= @connection.why %>">
-    <!-- Input for why end -->
   </div>
-  <!-- Label and input for why end -->
 
-  <!-- Label and input for afriend_id start -->
   <div class="form-group">
     <label for="afriend_id">
       Afriend
     </label>
 
-    <!-- Input for afriend_id start -->
     <input type="text" id="afriend_id" name="afriend_id" class="form-control" value="<%= @connection.afriend_id %>">
-    <!-- Input for afriend_id end -->
   </div>
-  <!-- Label and input for afriend_id end -->
 
-  <!-- Label and input for bfriend_id start -->
-  <!-- Input for bfriend_id start -->
   <input type="hidden" name="bfriend_id" value="<%= @friend.id %>">
-  <!-- Input for bfriend_id end -->
 
-  <!-- Label and input for user_id start -->
   <div class="form-group">
     <label for="user_id">
       User
     </label>
 
-    <!-- Input for user_id start -->
     <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @connection.user_id %>">
-    <!-- Input for user_id end -->
   </div>
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create connection

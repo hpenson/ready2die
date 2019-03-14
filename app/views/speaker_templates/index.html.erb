@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "speaker_templates/speakers_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -62,19 +58,14 @@
 
       <% @speakers.each do |speaker| %>
       <tr>
-        <!-- Display speaker.id start -->
         <td>
           <%= speaker.id %>
         </td>
-        <!-- Display speaker.id end -->
 
-        <!-- Display speaker.rank start -->
         <td>
           <%= speaker.rank %>
         </td>
-        <!-- Display speaker.rank end -->
 
-        <!-- Display speaker.guest_id start -->
         <td>
           <% if speaker.guest.present? %>
             <a href="/guests/<%= speaker.guest.id %>">
@@ -82,31 +73,22 @@
             </a>
           <% end %>
         </td>
-        <!-- Display speaker.guest_id end -->
 
-        <!-- Display speaker.position start -->
         <td>
           <%= speaker.position %>
         </td>
-        <!-- Display speaker.position end -->
 
-        <!-- Display speaker.description start -->
         <td>
           <%= speaker.description %>
         </td>
-        <!-- Display speaker.description end -->
 
-        <!-- Display speaker.created_at start -->
         <td>
           <%= time_ago_in_words(speaker.created_at) %> ago
         </td>
-        <!-- Display speaker.created_at end -->
 
-        <!-- Display speaker.updated_at start -->
         <td>
           <%= time_ago_in_words(speaker.updated_at) %> ago
         </td>
-        <!-- Display speaker.updated_at end -->
 
         <td>
           <a href="/speakers/<%= speaker.id %>">

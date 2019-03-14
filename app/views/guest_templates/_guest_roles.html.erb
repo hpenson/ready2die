@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @guest.roles.each do |role| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/roles/<%= role.id %>">
           <%= role.kind %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_role_from_guest/<%= role.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="guest_roles_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "guest_templates/guest_roles_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

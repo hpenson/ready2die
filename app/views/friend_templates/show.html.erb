@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link friend start -->
       <div class="col">
         <% if current_user == @friend.user %>
           <a href="/friends/<%= @friend.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link friend end -->
 
-      <!-- Delete link friend start -->
       <div class="col">
         <% if current_user == @friend.user %>
           <a href="/delete_friend/<%= @friend.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,70 +26,56 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link friend end -->
     </div>
 
     <dl>
       <dt>
         First name
       </dt>
-      <!-- Display first_name start -->
       <dd>
         <%= @friend.first_name %>
       </dd>
-      <!-- Display first_name end -->
 
       <dt>
         Last name
       </dt>
-      <!-- Display last_name start -->
       <dd>
         <%= @friend.last_name %>
       </dd>
-      <!-- Display last_name end -->
 
       <dt>
         Address
       </dt>
-      <!-- Display address start -->
       <dd>
         <div>
           <%= render partial: "friend_templates/one_photo_map" %>
         </div>
       </dd>
-      <!-- Display address end -->
 
       <dt>
         Email
       </dt>
-      <!-- Display email start -->
       <dd>
         <%= @friend.email %>
       </dd>
-      <!-- Display email end -->
 
       <dt>
         Phone
       </dt>
-      <!-- Display phone start -->
       <dd>
         <%= @friend.phone %>
       </dd>
-      <!-- Display phone end -->
 
       <dt>
         Image
       </dt>
-      <!-- Display image start -->
       <dd>
         <img src="<%= @friend.image %>" class="img-fluid">
       </dd>
-      <!-- Display image end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @friend.user.present? %>
           <a href="/users/<%= @friend.user_id %>">
@@ -100,30 +83,24 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@friend.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@friend.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "friend_templates/friend_connections" %>
@@ -135,4 +112,3 @@
     <%= render partial: "friend_templates/friend_made_connections" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

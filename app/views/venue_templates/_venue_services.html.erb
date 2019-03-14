@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @venue.services.each do |service| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/services/<%= service.id %>">
           <%= service.venue_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == service.user %>
           <a href="/delete_service_from_venue/<%= service.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="venue_services_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "venue_templates/venue_services_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

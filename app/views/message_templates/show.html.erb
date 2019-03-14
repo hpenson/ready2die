@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link message start -->
       <div class="col">
         <% if current_user == @message.user %>
           <a href="/messages/<%= @message.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link message end -->
 
-      <!-- Delete link message start -->
       <div class="col">
         <% if current_user == @message.user %>
           <a href="/delete_message/<%= @message.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,88 +26,70 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link message end -->
     </div>
 
     <dl>
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @message.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         Receipient
       </dt>
-      <!-- Display receipient start -->
       <dd>
         <%= @message.receipient %>
       </dd>
-      <!-- Display receipient end -->
 
       <dt>
         Address
       </dt>
-      <!-- Display address start -->
       <dd>
         <div>
           <%= render partial: "message_templates/one_photo_map" %>
         </div>
       </dd>
-      <!-- Display address end -->
 
       <dt>
         Email
       </dt>
-      <!-- Display email start -->
       <dd>
         <%= @message.email %>
       </dd>
-      <!-- Display email end -->
 
       <dt>
         Phone
       </dt>
-      <!-- Display phone start -->
       <dd>
         <%= @message.phone %>
       </dd>
-      <!-- Display phone end -->
 
       <dt>
         Content
       </dt>
-      <!-- Display content start -->
       <dd>
         <%= @message.content %>
       </dd>
-      <!-- Display content end -->
 
       <dt>
         Audio
       </dt>
-      <!-- Display audio start -->
       <dd>
         <%= @message.audio %>
       </dd>
-      <!-- Display audio end -->
 
       <dt>
         Video
       </dt>
-      <!-- Display video start -->
       <dd>
         <%= @message.video %>
       </dd>
-      <!-- Display video end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @message.user.present? %>
           <a href="/users/<%= @message.user_id %>">
@@ -118,37 +97,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Photo
       </dt>
-      <!-- Display photo start -->
       <dd>
         <img src="<%= @message.photo %>" class="img-fluid">
       </dd>
-      <!-- Display photo end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@message.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@message.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

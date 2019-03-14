@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @remain.errors.any? %>
   <% @remain.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,36 +12,24 @@
 
 <hr>
 
-<!-- Form remain start -->
 <form action="/update_remain/<%= @remain.id %>" method="post">
-<!-- Form remain end -->
 
-  <!-- Label and input for portion start -->
   <div class="form-group">
     <label for="portion">
       Portion
     </label>
 
-    <!-- Input for portion start -->
     <input type="text" id="portion" name="portion" class="form-control" value="<%= @remain.portion %>">
-    <!-- Input for portion end -->
   </div>
-  <!-- Label and input for portion end -->
 
-  <!-- Label and input for wish start -->
   <div class="form-group">
     <label for="wish">
       Wish
     </label>
 
-    <!-- Input for wish start -->
     <input type="text" id="wish" name="wish" class="form-control" value="<%= @remain.wish %>">
-    <!-- Input for wish end -->
   </div>
-  <!-- Label and input for wish end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Label and input for user_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update remain

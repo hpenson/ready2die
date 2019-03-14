@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @friend.connections.each do |connection| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/connections/<%= connection.id %>">
           <%= connection.created_at %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == connection.user %>
           <a href="/delete_connection_from_friend/<%= connection.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="friend_connections_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "friend_templates/friend_connections_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @service.present? %>
   <% if @service.errors.any? %>
     <% @service.errors.full_messages.each do |message| %>
@@ -16,63 +15,41 @@
 
 <hr>
 
-<!-- Form service start -->
 <form action="/create_service" method="post">
-<!-- Form service end -->
 
-  <!-- Label and input for venue_id start -->
   <div class="form-group">
     <label for="venue_id">
       Venue
     </label>
 
-    <!-- Input for venue_id start -->
     <%= select_tag(:venue_id, options_from_collection_for_select(Venue.all, :id, :name, @service.venue_id), :class => "form-control") %>
-    <!-- Input for venue_id end -->
   </div>
-  <!-- Label and input for venue_id end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for theme_id start -->
   <div class="form-group">
     <label for="theme_id">
       Theme
     </label>
 
-    <!-- Input for theme_id start -->
     <%= select_tag(:theme_id, options_from_collection_for_select(Theme.all, :id, :rank, @service.theme_id), :class => "form-control") %>
-    <!-- Input for theme_id end -->
   </div>
-  <!-- Label and input for theme_id end -->
 
-  <!-- Label and input for rank start -->
   <div class="form-group">
     <label for="rank">
       Rank
     </label>
 
-    <!-- Input for rank start -->
     <input type="text" id="rank" name="rank" class="form-control" value="<%= @service.rank %>">
-    <!-- Input for rank end -->
   </div>
-  <!-- Label and input for rank end -->
 
-  <!-- Label and input for casket start -->
   <div class="form-group">
     <label for="casket">
       Casket
     </label>
 
-    <!-- Input for casket start -->
     <input type="text" id="casket" name="casket" class="form-control" value="<%= @service.casket %>">
-    <!-- Input for casket end -->
   </div>
-  <!-- Label and input for casket end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create service

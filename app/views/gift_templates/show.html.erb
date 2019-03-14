@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link gift start -->
       <div class="col">
         <% if current_user == @gift.user %>
           <a href="/gifts/<%= @gift.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link gift end -->
 
-      <!-- Delete link gift start -->
       <div class="col">
         <% if current_user == @gift.user %>
           <a href="/delete_gift/<%= @gift.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,52 +26,42 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link gift end -->
     </div>
 
     <dl>
       <dt>
         Receipient
       </dt>
-      <!-- Display receipient start -->
       <dd>
         <%= @gift.receipient %>
       </dd>
-      <!-- Display receipient end -->
 
       <dt>
         Address
       </dt>
-      <!-- Display address start -->
       <dd>
         <div>
           <%= render partial: "gift_templates/one_photo_map" %>
         </div>
       </dd>
-      <!-- Display address end -->
 
       <dt>
         Email
       </dt>
-      <!-- Display email start -->
       <dd>
         <%= @gift.email %>
       </dd>
-      <!-- Display email end -->
 
       <dt>
         Kind
       </dt>
-      <!-- Display kind start -->
       <dd>
         <%= @gift.kind %>
       </dd>
-      <!-- Display kind end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @gift.user.present? %>
           <a href="/users/<%= @gift.user_id %>">
@@ -82,28 +69,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@gift.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@gift.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
