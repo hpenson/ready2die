@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Mc #<%= @mc.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/mcs" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link mc start -->
+      <div class="col">
+        <a href="/mcs/<%= @mc.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit mc
+        </a>
+      </div>
+      <!-- Edit link mc end -->
+
+      <!-- Delete link mc start -->
+      <div class="col">
+        <a href="/delete_mc/<%= @mc.id %>" class="btn btn-block btn-outline-secondary">
+          Delete mc
+        </a>
+      </div>
+      <!-- Delete link mc end -->
+    </div>
+
+    <dl>
+      <dt>
+        Rank
+      </dt>
+      <!-- Display rank start -->
+      <dd>
+        <%= @mc.rank %>
+      </dd>
+      <!-- Display rank end -->
+
+      <dt>
+        Guest
+      </dt>
+      <!-- Display guest_id start -->
+      <dd>
+        <%= @mc.guest_id %>
+      </dd>
+      <!-- Display guest_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@mc.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@mc.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

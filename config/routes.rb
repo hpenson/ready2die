@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Mc resource:
+
+  # CREATE
+  get("/mcs/new", { :controller => "mcs", :action => "new_form" })
+  post("/create_mc", { :controller => "mcs", :action => "create_row" })
+
+  # READ
+  get("/mcs", { :controller => "mcs", :action => "index" })
+  get("/mcs/:id_to_display", { :controller => "mcs", :action => "show" })
+
+  # UPDATE
+  get("/mcs/:prefill_with_id/edit", { :controller => "mcs", :action => "edit_form" })
+  post("/update_mc/:id_to_modify", { :controller => "mcs", :action => "update_row" })
+
+  # DELETE
+  get("/delete_mc/:id_to_remove", { :controller => "mcs", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Speaker resource:
 
   # CREATE
