@@ -10,7 +10,7 @@ class RemainsController < ApplicationController
   end
 
   def index
-    @remains = Remain.all
+    @remains = current_user.remains.page(params[:page]).per(10)
 
     render("remain_templates/index.html.erb")
   end
