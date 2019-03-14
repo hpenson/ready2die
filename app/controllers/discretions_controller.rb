@@ -10,7 +10,7 @@ class DiscretionsController < ApplicationController
   end
 
   def index
-    @discretions = Discretion.all
+    @discretions = current_user.discretions.page(params[:page]).per(10)
 
     render("discretion_templates/index.html.erb")
   end
