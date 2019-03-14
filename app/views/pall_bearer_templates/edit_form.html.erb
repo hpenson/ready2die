@@ -1,0 +1,44 @@
+<h1>
+  Edit pall bearer #<%= @pall_bearer.id %>
+</h1>
+
+<hr>
+
+<!-- Form pall_bearer start -->
+<form action="/update_pall_bearer/<%= @pall_bearer.id %>" method="post">
+<!-- Form pall_bearer end -->
+
+  <!-- Label and input for guest_id start -->
+  <div class="form-group">
+    <label for="guest_id">
+      Guest
+    </label>
+
+    <!-- Input for guest_id start -->
+    <input type="text" id="guest_id" name="guest_id" class="form-control" value="<%= @pall_bearer.guest_id %>">
+    <!-- Input for guest_id end -->
+  </div>
+  <!-- Label and input for guest_id end -->
+
+  <!-- Label and input for rank start -->
+  <div class="form-group">
+    <label for="rank">
+      Rank
+    </label>
+
+    <!-- Input for rank start -->
+    <input type="text" id="rank" name="rank" class="form-control" value="<%= @pall_bearer.rank %>">
+    <!-- Input for rank end -->
+  </div>
+  <!-- Label and input for rank end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update pall bearer
+  </button>
+</form>
+
+<hr>
+
+<a href="/pall_bearers">
+  Go back
+</a>

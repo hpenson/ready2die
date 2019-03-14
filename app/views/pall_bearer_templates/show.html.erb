@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Pall bearer #<%= @pall_bearer.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/pall_bearers" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link pall_bearer start -->
+      <div class="col">
+        <a href="/pall_bearers/<%= @pall_bearer.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit pall bearer
+        </a>
+      </div>
+      <!-- Edit link pall_bearer end -->
+
+      <!-- Delete link pall_bearer start -->
+      <div class="col">
+        <a href="/delete_pall_bearer/<%= @pall_bearer.id %>" class="btn btn-block btn-outline-secondary">
+          Delete pall bearer
+        </a>
+      </div>
+      <!-- Delete link pall_bearer end -->
+    </div>
+
+    <dl>
+      <dt>
+        Guest
+      </dt>
+      <!-- Display guest_id start -->
+      <dd>
+        <%= @pall_bearer.guest_id %>
+      </dd>
+      <!-- Display guest_id end -->
+
+      <dt>
+        Rank
+      </dt>
+      <!-- Display rank start -->
+      <dd>
+        <%= @pall_bearer.rank %>
+      </dd>
+      <!-- Display rank end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@pall_bearer.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@pall_bearer.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @pall_bearer.present? %>
+  <% if @pall_bearer.errors.any? %>
+    <% @pall_bearer.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new pall bearer
+</h1>
+
+
+<hr>
+
+<!-- Form pall_bearer start -->
+<form action="/create_pall_bearer" method="post">
+<!-- Form pall_bearer end -->
+
+  <!-- Label and input for guest_id start -->
+  <div class="form-group">
+    <label for="guest_id">
+      Guest
+    </label>
+
+    <!-- Input for guest_id start -->
+    <input type="text" id="guest_id" name="guest_id" class="form-control" value="<%= @pall_bearer.guest_id %>">
+    <!-- Input for guest_id end -->
+  </div>
+  <!-- Label and input for guest_id end -->
+
+  <!-- Label and input for rank start -->
+  <div class="form-group">
+    <label for="rank">
+      Rank
+    </label>
+
+    <!-- Input for rank start -->
+    <input type="text" id="rank" name="rank" class="form-control" value="<%= @pall_bearer.rank %>">
+    <!-- Input for rank end -->
+  </div>
+  <!-- Label and input for rank end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create pall bearer
+  </button>
+</form>
+
+<hr>
+
+<a href="/pall_bearers">
+  Go back
+</a>

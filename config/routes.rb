@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Pall bearer resource:
+
+  # CREATE
+  get("/pall_bearers/new", { :controller => "pall_bearers", :action => "new_form" })
+  post("/create_pall_bearer", { :controller => "pall_bearers", :action => "create_row" })
+
+  # READ
+  get("/pall_bearers", { :controller => "pall_bearers", :action => "index" })
+  get("/pall_bearers/:id_to_display", { :controller => "pall_bearers", :action => "show" })
+
+  # UPDATE
+  get("/pall_bearers/:prefill_with_id/edit", { :controller => "pall_bearers", :action => "edit_form" })
+  post("/update_pall_bearer/:id_to_modify", { :controller => "pall_bearers", :action => "update_row" })
+
+  # DELETE
+  get("/delete_pall_bearer/:id_to_remove", { :controller => "pall_bearers", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Guest resource:
 
   # CREATE
