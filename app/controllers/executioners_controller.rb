@@ -10,7 +10,7 @@ class ExecutionersController < ApplicationController
   end
 
   def index
-    @executioners = Executioner.all
+    @executioners = current_user.executioners.page(params[:page]).per(10)
 
     render("executioner_templates/index.html.erb")
   end
