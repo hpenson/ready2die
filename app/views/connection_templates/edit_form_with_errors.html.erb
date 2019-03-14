@@ -48,7 +48,7 @@
     </label>
 
     <!-- Input for bfriend_id start -->
-    <input type="text" id="bfriend_id" name="bfriend_id" class="form-control" value="<%= @connection.bfriend_id %>">
+    <%= select_tag(:bfriend_id, options_from_collection_for_select(Friend.all, :id, :first_name, @connection.bfriend_id), :class => "form-control") %>
     <!-- Input for bfriend_id end -->
   </div>
   <!-- Label and input for bfriend_id end -->
