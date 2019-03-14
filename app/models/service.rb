@@ -11,6 +11,10 @@ class Service < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :slideshow,
+             :through => :user,
+             :source => :photos
+
   has_one    :playlist,
              :through => :user,
              :source => :songs
