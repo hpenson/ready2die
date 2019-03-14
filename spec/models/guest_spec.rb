@@ -4,6 +4,8 @@ RSpec.describe Guest, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_one(:mc) }
+
     it { should have_many(:speakers) }
 
     it { should have_one(:pall_bearer) }
