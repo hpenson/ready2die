@@ -10,7 +10,7 @@ class ObituariesController < ApplicationController
   end
 
   def index
-    @obituaries = Obituary.all
+    @obituaries = current_user.obituaries.page(params[:page]).per(10)
 
     render("obituary_templates/index.html.erb")
   end
