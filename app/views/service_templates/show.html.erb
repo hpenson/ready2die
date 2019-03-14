@@ -13,17 +13,21 @@
 
       <!-- Edit link service start -->
       <div class="col">
-        <a href="/services/<%= @service.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit service
-        </a>
+        <% if current_user == @service.user %>
+          <a href="/services/<%= @service.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit service
+          </a>
+        <% end %>
       </div>
       <!-- Edit link service end -->
 
       <!-- Delete link service start -->
       <div class="col">
-        <a href="/delete_service/<%= @service.id %>" class="btn btn-block btn-outline-secondary">
-          Delete service
-        </a>
+        <% if current_user == @service.user %>
+          <a href="/delete_service/<%= @service.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete service
+          </a>
+        <% end %>
       </div>
       <!-- Delete link service end -->
     </div>
