@@ -6,6 +6,8 @@ class GuestsController < ApplicationController
   end
 
   def show
+    @role = Role.new
+    @speaker = Speaker.new
     @guest = Guest.find(params.fetch("id_to_display"))
 
     render("guest_templates/show.html.erb")

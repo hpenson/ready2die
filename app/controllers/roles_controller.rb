@@ -34,6 +34,23 @@ class RolesController < ApplicationController
     end
   end
 
+  def create_row_from_guest
+    @role = Role.new
+
+    @role.kind = params.fetch("kind")
+    @role.description = params.fetch("description")
+    @role.rank = params.fetch("rank")
+    @role.guest_id = params.fetch("guest_id")
+
+    if @role.valid?
+      @role.save
+
+      redirect_to("/guests/#{@role.guest_id}", notice: "Role created successfully.")
+    else
+      render("role_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @role = Role.find(params.fetch("prefill_with_id"))
 

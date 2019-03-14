@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/services/new", { :controller => "services", :action => "new_form" })
   post("/create_service", { :controller => "services", :action => "create_row" })
+  post("/create_service_from_theme", { :controller => "services", :action => "create_row_from_theme" })
+  post("/create_service_from_venue", { :controller => "services", :action => "create_row_from_venue" })
 
   # READ
   get("/services", { :controller => "services", :action => "index" })
@@ -148,6 +150,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/discretions/new", { :controller => "discretions", :action => "new_form" })
   post("/create_discretion", { :controller => "discretions", :action => "create_row" })
+  post("/create_discretion_from_appointee", { :controller => "discretions", :action => "create_row_from_appointee" })
 
   # READ
   get("/discretions", { :controller => "discretions", :action => "index" })
@@ -169,6 +172,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/connections/new", { :controller => "connections", :action => "new_form" })
   post("/create_connection", { :controller => "connections", :action => "create_row" })
+  post("/create_connection_from_friend", { :controller => "connections", :action => "create_row_from_friend" })
 
   # READ
   get("/connections", { :controller => "connections", :action => "index" })
@@ -271,6 +275,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/roles/new", { :controller => "roles", :action => "new_form" })
   post("/create_role", { :controller => "roles", :action => "create_row" })
+  post("/create_role_from_guest", { :controller => "roles", :action => "create_row_from_guest" })
 
   # READ
   get("/roles", { :controller => "roles", :action => "index" })
@@ -310,6 +315,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/speakers/new", { :controller => "speakers", :action => "new_form" })
   post("/create_speaker", { :controller => "speakers", :action => "create_row" })
+  post("/create_speaker_from_guest", { :controller => "speakers", :action => "create_row_from_guest" })
 
   # READ
   get("/speakers", { :controller => "speakers", :action => "index" })

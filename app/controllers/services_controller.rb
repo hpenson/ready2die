@@ -35,6 +35,42 @@ class ServicesController < ApplicationController
     end
   end
 
+  def create_row_from_venue
+    @service = Service.new
+
+    @service.venue_id = params.fetch("venue_id")
+    @service.user_id = params.fetch("user_id")
+    @service.theme_id = params.fetch("theme_id")
+    @service.rank = params.fetch("rank")
+    @service.casket = params.fetch("casket")
+
+    if @service.valid?
+      @service.save
+
+      redirect_to("/venues/#{@service.venue_id}", notice: "Service created successfully.")
+    else
+      render("service_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_theme
+    @service = Service.new
+
+    @service.venue_id = params.fetch("venue_id")
+    @service.user_id = params.fetch("user_id")
+    @service.theme_id = params.fetch("theme_id")
+    @service.rank = params.fetch("rank")
+    @service.casket = params.fetch("casket")
+
+    if @service.valid?
+      @service.save
+
+      redirect_to("/themes/#{@service.theme_id}", notice: "Service created successfully.")
+    else
+      render("service_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @service = Service.find(params.fetch("prefill_with_id"))
 

@@ -35,6 +35,24 @@ class DiscretionsController < ApplicationController
     end
   end
 
+  def create_row_from_appointee
+    @discretion = Discretion.new
+
+    @discretion.title = params.fetch("title")
+    @discretion.description = params.fetch("description")
+    @discretion.instruction = params.fetch("instruction")
+    @discretion.user_id = params.fetch("user_id")
+    @discretion.apppointee_id = params.fetch("apppointee_id")
+
+    if @discretion.valid?
+      @discretion.save
+
+      redirect_to("/appointees/#{@discretion.apppointee_id}", notice: "Discretion created successfully.")
+    else
+      render("discretion_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @discretion = Discretion.find(params.fetch("prefill_with_id"))
 

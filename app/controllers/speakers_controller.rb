@@ -34,6 +34,23 @@ class SpeakersController < ApplicationController
     end
   end
 
+  def create_row_from_guest
+    @speaker = Speaker.new
+
+    @speaker.rank = params.fetch("rank")
+    @speaker.guest_id = params.fetch("guest_id")
+    @speaker.position = params.fetch("position")
+    @speaker.description = params.fetch("description")
+
+    if @speaker.valid?
+      @speaker.save
+
+      redirect_to("/guests/#{@speaker.guest_id}", notice: "Speaker created successfully.")
+    else
+      render("speaker_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @speaker = Speaker.find(params.fetch("prefill_with_id"))
 

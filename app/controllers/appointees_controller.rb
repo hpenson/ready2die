@@ -6,6 +6,7 @@ class AppointeesController < ApplicationController
   end
 
   def show
+    @discretion = Discretion.new
     @appointee = Appointee.find(params.fetch("id_to_display"))
 
     render("appointee_templates/show.html.erb")

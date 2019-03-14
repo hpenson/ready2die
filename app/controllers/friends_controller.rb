@@ -6,6 +6,7 @@ class FriendsController < ApplicationController
   end
 
   def show
+    @connection = Connection.new
     @friend = Friend.find(params.fetch("id_to_display"))
 
     render("friend_templates/show.html.erb")

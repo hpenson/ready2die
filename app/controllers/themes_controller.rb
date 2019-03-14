@@ -6,6 +6,7 @@ class ThemesController < ApplicationController
   end
 
   def show
+    @service = Service.new
     @theme = Theme.find(params.fetch("id_to_display"))
 
     render("theme_templates/show.html.erb")
