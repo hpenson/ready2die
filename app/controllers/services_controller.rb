@@ -10,7 +10,7 @@ class ServicesController < ApplicationController
   end
 
   def index
-    @services = Service.all
+    @services = current_user.services.page(params[:page]).per(10)
 
     render("service_templates/index.html.erb")
   end
