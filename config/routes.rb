@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Message resource:
+
+  # CREATE
+  get("/messages/new", { :controller => "messages", :action => "new_form" })
+  post("/create_message", { :controller => "messages", :action => "create_row" })
+
+  # READ
+  get("/messages", { :controller => "messages", :action => "index" })
+  get("/messages/:id_to_display", { :controller => "messages", :action => "show" })
+
+  # UPDATE
+  get("/messages/:prefill_with_id/edit", { :controller => "messages", :action => "edit_form" })
+  post("/update_message/:id_to_modify", { :controller => "messages", :action => "update_row" })
+
+  # DELETE
+  get("/delete_message/:id_to_remove", { :controller => "messages", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Gift resource:
 
   # CREATE
