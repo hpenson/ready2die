@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Expression resource:
+
+  # CREATE
+  get("/expressions/new", { :controller => "expressions", :action => "new_form" })
+  post("/create_expression", { :controller => "expressions", :action => "create_row" })
+
+  # READ
+  get("/expressions", { :controller => "expressions", :action => "index" })
+  get("/expressions/:id_to_display", { :controller => "expressions", :action => "show" })
+
+  # UPDATE
+  get("/expressions/:prefill_with_id/edit", { :controller => "expressions", :action => "edit_form" })
+  post("/update_expression/:id_to_modify", { :controller => "expressions", :action => "update_row" })
+
+  # DELETE
+  get("/delete_expression/:id_to_remove", { :controller => "expressions", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Role resource:
 
   # CREATE

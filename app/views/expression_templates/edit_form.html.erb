@@ -1,0 +1,80 @@
+<h1>
+  Edit expression #<%= @expression.id %>
+</h1>
+
+<hr>
+
+<!-- Form expression start -->
+<form action="/update_expression/<%= @expression.id %>" method="post">
+<!-- Form expression end -->
+
+  <!-- Label and input for kind start -->
+  <div class="form-group">
+    <label for="kind">
+      Kind
+    </label>
+
+    <!-- Input for kind start -->
+    <input type="text" id="kind" name="kind" class="form-control" value="<%= @expression.kind %>">
+    <!-- Input for kind end -->
+  </div>
+  <!-- Label and input for kind end -->
+
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <!-- Input for description start -->
+    <input type="text" id="description" name="description" class="form-control" value="<%= @expression.description %>">
+    <!-- Input for description end -->
+  </div>
+  <!-- Label and input for description end -->
+
+  <!-- Label and input for rank start -->
+  <div class="form-group">
+    <label for="rank">
+      Rank
+    </label>
+
+    <!-- Input for rank start -->
+    <input type="text" id="rank" name="rank" class="form-control" value="<%= @expression.rank %>">
+    <!-- Input for rank end -->
+  </div>
+  <!-- Label and input for rank end -->
+
+  <!-- Label and input for service_id start -->
+  <div class="form-group">
+    <label for="service_id">
+      Service
+    </label>
+
+    <!-- Input for service_id start -->
+    <input type="text" id="service_id" name="service_id" class="form-control" value="<%= @expression.service_id %>">
+    <!-- Input for service_id end -->
+  </div>
+  <!-- Label and input for service_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @expression.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update expression
+  </button>
+</form>
+
+<hr>
+
+<a href="/expressions">
+  Go back
+</a>

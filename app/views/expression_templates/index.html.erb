@@ -1,0 +1,122 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All expressions
+    </h1>
+
+    <a href="/expressions/new" class="btn btn-block btn-outline-secondary">
+      Add a new expression
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Kind
+        </th>
+
+        <th>
+          Description
+        </th>
+
+        <th>
+          Rank
+        </th>
+
+        <th>
+          Service
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @expressions.each do |expression| %>
+      <tr>
+        <!-- Display expression.id start -->
+        <td>
+          <%= expression.id %>
+        </td>
+        <!-- Display expression.id end -->
+
+        <!-- Display expression.kind start -->
+        <td>
+          <%= expression.kind %>
+        </td>
+        <!-- Display expression.kind end -->
+
+        <!-- Display expression.description start -->
+        <td>
+          <%= expression.description %>
+        </td>
+        <!-- Display expression.description end -->
+
+        <!-- Display expression.rank start -->
+        <td>
+          <%= expression.rank %>
+        </td>
+        <!-- Display expression.rank end -->
+
+        <!-- Display expression.service_id start -->
+        <td>
+          <%= expression.service_id %>
+        </td>
+        <!-- Display expression.service_id end -->
+
+        <!-- Display expression.user_id start -->
+        <td>
+          <%= expression.user_id %>
+        </td>
+        <!-- Display expression.user_id end -->
+
+        <!-- Display expression.created_at start -->
+        <td>
+          <%= time_ago_in_words(expression.created_at) %> ago
+        </td>
+        <!-- Display expression.created_at end -->
+
+        <!-- Display expression.updated_at start -->
+        <td>
+          <%= time_ago_in_words(expression.updated_at) %> ago
+        </td>
+        <!-- Display expression.updated_at end -->
+
+        <td>
+          <a href="/expressions/<%= expression.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
