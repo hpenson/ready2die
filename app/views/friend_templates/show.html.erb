@@ -13,17 +13,21 @@
 
       <!-- Edit link friend start -->
       <div class="col">
-        <a href="/friends/<%= @friend.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit friend
-        </a>
+        <% if current_user == @friend.user %>
+          <a href="/friends/<%= @friend.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit friend
+          </a>
+        <% end %>
       </div>
       <!-- Edit link friend end -->
 
       <!-- Delete link friend start -->
       <div class="col">
-        <a href="/delete_friend/<%= @friend.id %>" class="btn btn-block btn-outline-secondary">
-          Delete friend
-        </a>
+        <% if current_user == @friend.user %>
+          <a href="/delete_friend/<%= @friend.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete friend
+          </a>
+        <% end %>
       </div>
       <!-- Delete link friend end -->
     </div>
