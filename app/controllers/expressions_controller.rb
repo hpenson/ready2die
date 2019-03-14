@@ -59,6 +59,14 @@ class ExpressionsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @expression = Expression.find(params.fetch("id_to_remove"))
+
+    @expression.destroy
+
+    redirect_to("/users/#{@expression.user_id}", notice: "Expression deleted successfully.")
+  end
+
   def destroy_row
     @expression = Expression.find(params.fetch("id_to_remove"))
 

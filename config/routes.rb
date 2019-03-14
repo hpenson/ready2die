@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_song/:id_to_remove", { :controller => "songs", :action => "destroy_row" })
+  get("/delete_song_from_user/:id_to_remove", { :controller => "songs", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -37,6 +38,9 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_service/:id_to_remove", { :controller => "services", :action => "destroy_row" })
+  get("/delete_service_from_theme/:id_to_remove", { :controller => "services", :action => "destroy_row_from_theme" })
+  get("/delete_service_from_venue/:id_to_remove", { :controller => "services", :action => "destroy_row_from_venue" })
+  get("/delete_service_from_user/:id_to_remove", { :controller => "services", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -75,6 +79,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_video/:id_to_remove", { :controller => "videos", :action => "destroy_row" })
+  get("/delete_video_from_user/:id_to_remove", { :controller => "videos", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -94,6 +99,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_message/:id_to_remove", { :controller => "messages", :action => "destroy_row" })
+  get("/delete_message_from_user/:id_to_remove", { :controller => "messages", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -113,6 +119,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_gift/:id_to_remove", { :controller => "gifts", :action => "destroy_row" })
+  get("/delete_gift_from_user/:id_to_remove", { :controller => "gifts", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -132,6 +139,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_obituary/:id_to_remove", { :controller => "obituaries", :action => "destroy_row" })
+  get("/delete_obituary_from_user/:id_to_remove", { :controller => "obituaries", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -151,6 +159,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_discretion/:id_to_remove", { :controller => "discretions", :action => "destroy_row" })
+  get("/delete_discretion_from_apppointee/:id_to_remove", { :controller => "discretions", :action => "destroy_row_from_apppointee" })
+  get("/delete_discretion_from_user/:id_to_remove", { :controller => "discretions", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -170,6 +180,9 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_connection/:id_to_remove", { :controller => "connections", :action => "destroy_row" })
+  get("/delete_connection_from_bfriend/:id_to_remove", { :controller => "connections", :action => "destroy_row_from_bfriend" })
+  get("/delete_connection_from_afriend/:id_to_remove", { :controller => "connections", :action => "destroy_row_from_afriend" })
+  get("/delete_connection_from_user/:id_to_remove", { :controller => "connections", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -189,6 +202,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_friend/:id_to_remove", { :controller => "friends", :action => "destroy_row" })
+  get("/delete_friend_from_user/:id_to_remove", { :controller => "friends", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -208,6 +222,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_executioner/:id_to_remove", { :controller => "executioners", :action => "destroy_row" })
+  get("/delete_executioner_from_user/:id_to_remove", { :controller => "executioners", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -227,6 +242,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_photo/:id_to_remove", { :controller => "photos", :action => "destroy_row" })
+  get("/delete_photo_from_user/:id_to_remove", { :controller => "photos", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -246,6 +262,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_expression/:id_to_remove", { :controller => "expressions", :action => "destroy_row" })
+  get("/delete_expression_from_user/:id_to_remove", { :controller => "expressions", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -265,6 +282,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_role/:id_to_remove", { :controller => "roles", :action => "destroy_row" })
+  get("/delete_role_from_guest/:id_to_remove", { :controller => "roles", :action => "destroy_row_from_guest" })
 
   #------------------------------
 
@@ -303,6 +321,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_speaker/:id_to_remove", { :controller => "speakers", :action => "destroy_row" })
+  get("/delete_speaker_from_guest/:id_to_remove", { :controller => "speakers", :action => "destroy_row_from_guest" })
 
   #------------------------------
 
@@ -341,6 +360,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_guest/:id_to_remove", { :controller => "guests", :action => "destroy_row" })
+  get("/delete_guest_from_user/:id_to_remove", { :controller => "guests", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -379,6 +399,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_remain/:id_to_remove", { :controller => "remains", :action => "destroy_row" })
+  get("/delete_remain_from_user/:id_to_remove", { :controller => "remains", :action => "destroy_row_from_user" })
 
   #------------------------------
 

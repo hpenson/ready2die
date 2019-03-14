@@ -57,6 +57,14 @@ class ObituariesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @obituary = Obituary.find(params.fetch("id_to_remove"))
+
+    @obituary.destroy
+
+    redirect_to("/users/#{@obituary.user_id}", notice: "Obituary deleted successfully.")
+  end
+
   def destroy_row
     @obituary = Obituary.find(params.fetch("id_to_remove"))
 

@@ -61,6 +61,14 @@ class GuestsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @guest = Guest.find(params.fetch("id_to_remove"))
+
+    @guest.destroy
+
+    redirect_to("/users/#{@guest.user_id}", notice: "Guest deleted successfully.")
+  end
+
   def destroy_row
     @guest = Guest.find(params.fetch("id_to_remove"))
 

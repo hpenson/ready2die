@@ -63,6 +63,14 @@ class ExecutionersController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @executioner = Executioner.find(params.fetch("id_to_remove"))
+
+    @executioner.destroy
+
+    redirect_to("/users/#{@executioner.user_id}", notice: "Executioner deleted successfully.")
+  end
+
   def destroy_row
     @executioner = Executioner.find(params.fetch("id_to_remove"))
 

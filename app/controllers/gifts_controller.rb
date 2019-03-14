@@ -59,6 +59,14 @@ class GiftsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @gift = Gift.find(params.fetch("id_to_remove"))
+
+    @gift.destroy
+
+    redirect_to("/users/#{@gift.user_id}", notice: "Gift deleted successfully.")
+  end
+
   def destroy_row
     @gift = Gift.find(params.fetch("id_to_remove"))
 

@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Songs
+
+    <a data-toggle="collapse" href="#user_songs_new_form">
+      Add song
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.songs.each do |song| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/songs/<%= song.id %>">
+          <%= song.title %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

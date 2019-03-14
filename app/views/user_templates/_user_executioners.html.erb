@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Executioners
+
+    <a data-toggle="collapse" href="#user_executioners_new_form">
+      Add executioner
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.executioners.each do |executioner| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/executioners/<%= executioner.id %>">
+          <%= executioner.last_name %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

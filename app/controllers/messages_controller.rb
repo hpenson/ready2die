@@ -69,6 +69,14 @@ class MessagesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @message = Message.find(params.fetch("id_to_remove"))
+
+    @message.destroy
+
+    redirect_to("/users/#{@message.user_id}", notice: "Message deleted successfully.")
+  end
+
   def destroy_row
     @message = Message.find(params.fetch("id_to_remove"))
 

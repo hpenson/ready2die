@@ -57,6 +57,30 @@ class ConnectionsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @connection = Connection.find(params.fetch("id_to_remove"))
+
+    @connection.destroy
+
+    redirect_to("/users/#{@connection.user_id}", notice: "Connection deleted successfully.")
+  end
+
+  def destroy_row_from_afriend
+    @connection = Connection.find(params.fetch("id_to_remove"))
+
+    @connection.destroy
+
+    redirect_to("/friends/#{@connection.afriend_id}", notice: "Connection deleted successfully.")
+  end
+
+  def destroy_row_from_bfriend
+    @connection = Connection.find(params.fetch("id_to_remove"))
+
+    @connection.destroy
+
+    redirect_to("/friends/#{@connection.bfriend_id}", notice: "Connection deleted successfully.")
+  end
+
   def destroy_row
     @connection = Connection.find(params.fetch("id_to_remove"))
 

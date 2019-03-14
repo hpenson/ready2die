@@ -59,6 +59,30 @@ class ServicesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @service = Service.find(params.fetch("id_to_remove"))
+
+    @service.destroy
+
+    redirect_to("/users/#{@service.user_id}", notice: "Service deleted successfully.")
+  end
+
+  def destroy_row_from_venue
+    @service = Service.find(params.fetch("id_to_remove"))
+
+    @service.destroy
+
+    redirect_to("/venues/#{@service.venue_id}", notice: "Service deleted successfully.")
+  end
+
+  def destroy_row_from_theme
+    @service = Service.find(params.fetch("id_to_remove"))
+
+    @service.destroy
+
+    redirect_to("/themes/#{@service.theme_id}", notice: "Service deleted successfully.")
+  end
+
   def destroy_row
     @service = Service.find(params.fetch("id_to_remove"))
 

@@ -59,6 +59,14 @@ class VideosController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @video = Video.find(params.fetch("id_to_remove"))
+
+    @video.destroy
+
+    redirect_to("/users/#{@video.user_id}", notice: "Video deleted successfully.")
+  end
+
   def destroy_row
     @video = Video.find(params.fetch("id_to_remove"))
 

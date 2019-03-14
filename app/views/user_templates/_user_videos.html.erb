@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Videos
+
+    <a data-toggle="collapse" href="#user_videos_new_form">
+      Add video
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.videos.each do |video| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/videos/<%= video.id %>">
+          <%= video.upload %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

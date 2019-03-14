@@ -55,6 +55,14 @@ class RemainsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @remain = Remain.find(params.fetch("id_to_remove"))
+
+    @remain.destroy
+
+    redirect_to("/users/#{@remain.user_id}", notice: "Remain deleted successfully.")
+  end
+
   def destroy_row
     @remain = Remain.find(params.fetch("id_to_remove"))
 

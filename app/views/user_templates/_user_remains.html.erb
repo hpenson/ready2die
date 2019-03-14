@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Remains
+
+    <a data-toggle="collapse" href="#user_remains_new_form">
+      Add remain
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.remains.each do |remain| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/remains/<%= remain.id %>">
+          <%= remain.portion %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

@@ -57,6 +57,14 @@ class SpeakersController < ApplicationController
     end
   end
 
+  def destroy_row_from_guest
+    @speaker = Speaker.find(params.fetch("id_to_remove"))
+
+    @speaker.destroy
+
+    redirect_to("/guests/#{@speaker.guest_id}", notice: "Speaker deleted successfully.")
+  end
+
   def destroy_row
     @speaker = Speaker.find(params.fetch("id_to_remove"))
 

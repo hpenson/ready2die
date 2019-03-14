@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Obituaries
+
+    <a data-toggle="collapse" href="#user_obituaries_new_form">
+      Add obituary
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.obituaries.each do |obituary| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/obituaries/<%= obituary.id %>">
+          <%= obituary.description %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

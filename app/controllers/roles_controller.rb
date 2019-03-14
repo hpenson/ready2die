@@ -57,6 +57,14 @@ class RolesController < ApplicationController
     end
   end
 
+  def destroy_row_from_guest
+    @role = Role.find(params.fetch("id_to_remove"))
+
+    @role.destroy
+
+    redirect_to("/guests/#{@role.guest_id}", notice: "Role deleted successfully.")
+  end
+
   def destroy_row
     @role = Role.find(params.fetch("id_to_remove"))
 

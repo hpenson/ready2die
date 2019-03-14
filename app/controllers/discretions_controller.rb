@@ -59,6 +59,22 @@ class DiscretionsController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @discretion = Discretion.find(params.fetch("id_to_remove"))
+
+    @discretion.destroy
+
+    redirect_to("/users/#{@discretion.user_id}", notice: "Discretion deleted successfully.")
+  end
+
+  def destroy_row_from_apppointee
+    @discretion = Discretion.find(params.fetch("id_to_remove"))
+
+    @discretion.destroy
+
+    redirect_to("/appointees/#{@discretion.apppointee_id}", notice: "Discretion deleted successfully.")
+  end
+
   def destroy_row
     @discretion = Discretion.find(params.fetch("id_to_remove"))
 

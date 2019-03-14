@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Discretions
+
+    <a data-toggle="collapse" href="#user_discretions_new_form">
+      Add discretion
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.discretions.each do |discretion| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/discretions/<%= discretion.id %>">
+          <%= discretion.title %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

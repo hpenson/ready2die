@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Messages
+
+    <a data-toggle="collapse" href="#user_messages_new_form">
+      Add message
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.messages.each do |message| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/messages/<%= message.id %>">
+          <%= message.description %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>
