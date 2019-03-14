@@ -4,6 +4,8 @@ RSpec.describe Discretion, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:apppointee) }
+
     it { should belong_to(:user) }
 
     end
