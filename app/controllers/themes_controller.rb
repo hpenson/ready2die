@@ -1,6 +1,7 @@
 class ThemesController < ApplicationController
   def index
-    @themes = Theme.page(params[:page]).per(10)
+    @q = Theme.ransack(params[:q])
+    @themes = @q.result(:distinct => true).includes(:services, :users).page(params[:page]).per(10)
 
     render("theme_templates/index.html.erb")
   end

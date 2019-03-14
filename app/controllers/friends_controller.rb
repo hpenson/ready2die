@@ -10,7 +10,8 @@ class FriendsController < ApplicationController
   end
 
   def index
-    @friends = current_user.friends.page(params[:page]).per(10)
+    @q = current_user.friends.ransack(params[:q])
+    @friends = @q.result(:distinct => true).includes(:user, :connections, :made_connections).page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@friends.where.not(:address_latitude => nil)) do |friend, marker|
       marker.lat friend.address_latitude
       marker.lng friend.address_longitude

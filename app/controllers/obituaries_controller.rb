@@ -10,7 +10,8 @@ class ObituariesController < ApplicationController
   end
 
   def index
-    @obituaries = current_user.obituaries.page(params[:page]).per(10)
+    @q = current_user.obituaries.ransack(params[:q])
+    @obituaries = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
 
     render("obituary_templates/index.html.erb")
   end

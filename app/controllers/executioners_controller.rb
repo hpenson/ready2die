@@ -10,7 +10,8 @@ class ExecutionersController < ApplicationController
   end
 
   def index
-    @executioners = current_user.executioners.page(params[:page]).per(10)
+    @q = current_user.executioners.ransack(params[:q])
+    @executioners = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@executioners.where.not(:address_latitude => nil)) do |executioner, marker|
       marker.lat executioner.address_latitude
       marker.lng executioner.address_longitude

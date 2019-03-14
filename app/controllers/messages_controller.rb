@@ -10,7 +10,8 @@ class MessagesController < ApplicationController
   end
 
   def index
-    @messages = current_user.messages.page(params[:page]).per(10)
+    @q = current_user.messages.ransack(params[:q])
+    @messages = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@messages.where.not(:address_latitude => nil)) do |message, marker|
       marker.lat message.address_latitude
       marker.lng message.address_longitude

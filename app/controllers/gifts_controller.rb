@@ -10,7 +10,8 @@ class GiftsController < ApplicationController
   end
 
   def index
-    @gifts = current_user.gifts.page(params[:page]).per(10)
+    @q = current_user.gifts.ransack(params[:q])
+    @gifts = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@gifts.where.not(:address_latitude => nil)) do |gift, marker|
       marker.lat gift.address_latitude
       marker.lng gift.address_longitude

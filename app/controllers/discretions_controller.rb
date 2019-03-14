@@ -10,7 +10,8 @@ class DiscretionsController < ApplicationController
   end
 
   def index
-    @discretions = current_user.discretions.page(params[:page]).per(10)
+    @q = current_user.discretions.ransack(params[:q])
+    @discretions = @q.result(:distinct => true).includes(:user, :apppointee).page(params[:page]).per(10)
 
     render("discretion_templates/index.html.erb")
   end

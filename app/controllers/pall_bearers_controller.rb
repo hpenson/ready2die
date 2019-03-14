@@ -1,6 +1,7 @@
 class PallBearersController < ApplicationController
   def index
-    @pall_bearers = PallBearer.page(params[:page]).per(10)
+    @q = PallBearer.ransack(params[:q])
+    @pall_bearers = @q.result(:distinct => true).includes(:guest, :user).page(params[:page]).per(10)
 
     render("pall_bearer_templates/index.html.erb")
   end

@@ -10,7 +10,8 @@ class RemainsController < ApplicationController
   end
 
   def index
-    @remains = current_user.remains.page(params[:page]).per(10)
+    @q = current_user.remains.ransack(params[:q])
+    @remains = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
 
     render("remain_templates/index.html.erb")
   end

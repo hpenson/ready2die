@@ -10,7 +10,8 @@ class ExpressionsController < ApplicationController
   end
 
   def index
-    @expressions = current_user.expressions.page(params[:page]).per(10)
+    @q = current_user.expressions.ransack(params[:q])
+    @expressions = @q.result(:distinct => true).includes(:user, :service).page(params[:page]).per(10)
 
     render("expression_templates/index.html.erb")
   end

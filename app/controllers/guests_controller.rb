@@ -10,7 +10,8 @@ class GuestsController < ApplicationController
   end
 
   def index
-    @guests = current_user.guests.page(params[:page]).per(10)
+    @q = current_user.guests.ransack(params[:q])
+    @guests = @q.result(:distinct => true).includes(:user, :pall_bearer, :speakers, :mc, :roles, :service).page(params[:page]).per(10)
     @location_hash = Gmaps4rails.build_markers(@guests.where.not(:address_latitude => nil)) do |guest, marker|
       marker.lat guest.address_latitude
       marker.lng guest.address_longitude

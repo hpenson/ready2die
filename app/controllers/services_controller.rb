@@ -10,7 +10,8 @@ class ServicesController < ApplicationController
   end
 
   def index
-    @services = current_user.services.page(params[:page]).per(10)
+    @q = current_user.services.ransack(params[:q])
+    @services = @q.result(:distinct => true).includes(:user, :venue, :theme, :mc, :playlist, :slideshow, :video_playlist, :expression_arrangement, :guest_list).page(params[:page]).per(10)
 
     render("service_templates/index.html.erb")
   end

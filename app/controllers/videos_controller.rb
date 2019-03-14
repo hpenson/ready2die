@@ -10,7 +10,8 @@ class VideosController < ApplicationController
   end
 
   def index
-    @videos = current_user.videos.page(params[:page]).per(10)
+    @q = current_user.videos.ransack(params[:q])
+    @videos = @q.result(:distinct => true).includes(:user, :service).page(params[:page]).per(10)
 
     render("video_templates/index.html.erb")
   end

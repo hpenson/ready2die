@@ -1,6 +1,7 @@
 class McsController < ApplicationController
   def index
-    @mcs = Mc.page(params[:page]).per(10)
+    @q = Mc.ransack(params[:q])
+    @mcs = @q.result(:distinct => true).includes(:guest, :user, :service).page(params[:page]).per(10)
 
     render("mc_templates/index.html.erb")
   end

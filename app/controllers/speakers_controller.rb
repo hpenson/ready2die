@@ -1,6 +1,7 @@
 class SpeakersController < ApplicationController
   def index
-    @speakers = Speaker.page(params[:page]).per(10)
+    @q = Speaker.ransack(params[:q])
+    @speakers = @q.result(:distinct => true).includes(:guest, :user).page(params[:page]).per(10)
 
     render("speaker_templates/index.html.erb")
   end
