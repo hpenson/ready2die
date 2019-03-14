@@ -13,17 +13,21 @@
 
       <!-- Edit link expression start -->
       <div class="col">
-        <a href="/expressions/<%= @expression.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit expression
-        </a>
+        <% if current_user == @expression.user %>
+          <a href="/expressions/<%= @expression.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit expression
+          </a>
+        <% end %>
       </div>
       <!-- Edit link expression end -->
 
       <!-- Delete link expression start -->
       <div class="col">
-        <a href="/delete_expression/<%= @expression.id %>" class="btn btn-block btn-outline-secondary">
-          Delete expression
-        </a>
+        <% if current_user == @expression.user %>
+          <a href="/delete_expression/<%= @expression.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete expression
+          </a>
+        <% end %>
       </div>
       <!-- Delete link expression end -->
     </div>
