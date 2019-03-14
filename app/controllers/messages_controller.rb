@@ -1,4 +1,14 @@
 class MessagesController < ApplicationController
+  before_action :current_user_must_be_message_user, :only => [:edit_form, :update_row, :destroy_row]
+
+  def current_user_must_be_message_user
+    message = Message.find(params["id_to_display"] || params["prefill_with_id"] || params["id_to_modify"] || params["id_to_remove"])
+
+    unless current_user == message.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @messages = Message.all
 

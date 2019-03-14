@@ -13,17 +13,21 @@
 
       <!-- Edit link message start -->
       <div class="col">
-        <a href="/messages/<%= @message.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit message
-        </a>
+        <% if current_user == @message.user %>
+          <a href="/messages/<%= @message.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit message
+          </a>
+        <% end %>
       </div>
       <!-- Edit link message end -->
 
       <!-- Delete link message start -->
       <div class="col">
-        <a href="/delete_message/<%= @message.id %>" class="btn btn-block btn-outline-secondary">
-          Delete message
-        </a>
+        <% if current_user == @message.user %>
+          <a href="/delete_message/<%= @message.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete message
+          </a>
+        <% end %>
       </div>
       <!-- Delete link message end -->
     </div>
