@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Speaker resource:
+
+  # CREATE
+  get("/speakers/new", { :controller => "speakers", :action => "new_form" })
+  post("/create_speaker", { :controller => "speakers", :action => "create_row" })
+
+  # READ
+  get("/speakers", { :controller => "speakers", :action => "index" })
+  get("/speakers/:id_to_display", { :controller => "speakers", :action => "show" })
+
+  # UPDATE
+  get("/speakers/:prefill_with_id/edit", { :controller => "speakers", :action => "edit_form" })
+  post("/update_speaker/:id_to_modify", { :controller => "speakers", :action => "update_row" })
+
+  # DELETE
+  get("/delete_speaker/:id_to_remove", { :controller => "speakers", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Pall bearer resource:
 
   # CREATE
