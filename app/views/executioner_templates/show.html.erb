@@ -13,17 +13,21 @@
 
       <!-- Edit link executioner start -->
       <div class="col">
-        <a href="/executioners/<%= @executioner.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit executioner
-        </a>
+        <% if current_user == @executioner.user %>
+          <a href="/executioners/<%= @executioner.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit executioner
+          </a>
+        <% end %>
       </div>
       <!-- Edit link executioner end -->
 
       <!-- Delete link executioner start -->
       <div class="col">
-        <a href="/delete_executioner/<%= @executioner.id %>" class="btn btn-block btn-outline-secondary">
-          Delete executioner
-        </a>
+        <% if current_user == @executioner.user %>
+          <a href="/delete_executioner/<%= @executioner.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete executioner
+          </a>
+        <% end %>
       </div>
       <!-- Delete link executioner end -->
     </div>
