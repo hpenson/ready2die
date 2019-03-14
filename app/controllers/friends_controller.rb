@@ -53,7 +53,7 @@ class FriendsController < ApplicationController
     @friend.email = params.fetch("email")
     @friend.phone = params.fetch("phone")
     @friend.image = params.fetch("image") if params.key?("image")
-    @friend.user_id = params.fetch("user_id")
+    
 
     if @friend.valid?
       @friend.save
