@@ -48,7 +48,7 @@ class ExpressionsController < ApplicationController
     @expression.description = params.fetch("description")
     @expression.rank = params.fetch("rank")
     @expression.service_id = params.fetch("service_id")
-    @expression.user_id = params.fetch("user_id")
+    
 
     if @expression.valid?
       @expression.save
