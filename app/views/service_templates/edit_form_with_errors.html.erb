@@ -1,0 +1,89 @@
+<!-- Validation failure messages -->
+<% if @service.errors.any? %>
+  <% @service.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit service #<%= @service.id %>
+</h1>
+
+<hr>
+
+<!-- Form service start -->
+<form action="/update_service/<%= @service.id %>" method="post">
+<!-- Form service end -->
+
+  <!-- Label and input for venue_id start -->
+  <div class="form-group">
+    <label for="venue_id">
+      Venue
+    </label>
+
+    <!-- Input for venue_id start -->
+    <input type="text" id="venue_id" name="venue_id" class="form-control" value="<%= @service.venue_id %>">
+    <!-- Input for venue_id end -->
+  </div>
+  <!-- Label and input for venue_id end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @service.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for theme_id start -->
+  <div class="form-group">
+    <label for="theme_id">
+      Theme
+    </label>
+
+    <!-- Input for theme_id start -->
+    <input type="text" id="theme_id" name="theme_id" class="form-control" value="<%= @service.theme_id %>">
+    <!-- Input for theme_id end -->
+  </div>
+  <!-- Label and input for theme_id end -->
+
+  <!-- Label and input for rank start -->
+  <div class="form-group">
+    <label for="rank">
+      Rank
+    </label>
+
+    <!-- Input for rank start -->
+    <input type="text" id="rank" name="rank" class="form-control" value="<%= @service.rank %>">
+    <!-- Input for rank end -->
+  </div>
+  <!-- Label and input for rank end -->
+
+  <!-- Label and input for casket start -->
+  <div class="form-group">
+    <label for="casket">
+      Casket
+    </label>
+
+    <!-- Input for casket start -->
+    <input type="text" id="casket" name="casket" class="form-control" value="<%= @service.casket %>">
+    <!-- Input for casket end -->
+  </div>
+  <!-- Label and input for casket end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update service
+  </button>
+</form>
+
+<hr>
+
+<a href="/services">
+  Go back
+</a>

@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Service resource:
+
+  # CREATE
+  get("/services/new", { :controller => "services", :action => "new_form" })
+  post("/create_service", { :controller => "services", :action => "create_row" })
+
+  # READ
+  get("/services", { :controller => "services", :action => "index" })
+  get("/services/:id_to_display", { :controller => "services", :action => "show" })
+
+  # UPDATE
+  get("/services/:prefill_with_id/edit", { :controller => "services", :action => "edit_form" })
+  post("/update_service/:id_to_modify", { :controller => "services", :action => "update_row" })
+
+  # DELETE
+  get("/delete_service/:id_to_remove", { :controller => "services", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Appointee resource:
 
   # CREATE

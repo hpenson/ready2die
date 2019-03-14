@@ -1,0 +1,122 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All services
+    </h1>
+
+    <a href="/services/new" class="btn btn-block btn-outline-secondary">
+      Add a new service
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Venue
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Theme
+        </th>
+
+        <th>
+          Rank
+        </th>
+
+        <th>
+          Casket
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @services.each do |service| %>
+      <tr>
+        <!-- Display service.id start -->
+        <td>
+          <%= service.id %>
+        </td>
+        <!-- Display service.id end -->
+
+        <!-- Display service.venue_id start -->
+        <td>
+          <%= service.venue_id %>
+        </td>
+        <!-- Display service.venue_id end -->
+
+        <!-- Display service.user_id start -->
+        <td>
+          <%= service.user_id %>
+        </td>
+        <!-- Display service.user_id end -->
+
+        <!-- Display service.theme_id start -->
+        <td>
+          <%= service.theme_id %>
+        </td>
+        <!-- Display service.theme_id end -->
+
+        <!-- Display service.rank start -->
+        <td>
+          <%= service.rank %>
+        </td>
+        <!-- Display service.rank end -->
+
+        <!-- Display service.casket start -->
+        <td>
+          <%= service.casket %>
+        </td>
+        <!-- Display service.casket end -->
+
+        <!-- Display service.created_at start -->
+        <td>
+          <%= time_ago_in_words(service.created_at) %> ago
+        </td>
+        <!-- Display service.created_at end -->
+
+        <!-- Display service.updated_at start -->
+        <td>
+          <%= time_ago_in_words(service.updated_at) %> ago
+        </td>
+        <!-- Display service.updated_at end -->
+
+        <td>
+          <a href="/services/<%= service.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
