@@ -1,6 +1,9 @@
 class Guest < ApplicationRecord
   # Direct associations
 
+  has_many   :roles,
+             :dependent => :destroy
+
   has_one    :mc,
              :dependent => :destroy
 
