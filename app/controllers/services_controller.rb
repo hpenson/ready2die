@@ -81,7 +81,7 @@ class ServicesController < ApplicationController
     @service = Service.find(params.fetch("id_to_modify"))
 
     @service.venue_id = params.fetch("venue_id")
-    @service.user_id = params.fetch("user_id")
+    
     @service.theme_id = params.fetch("theme_id")
     @service.rank = params.fetch("rank")
     @service.casket = params.fetch("casket")
