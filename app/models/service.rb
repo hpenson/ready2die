@@ -11,6 +11,10 @@ class Service < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :guest_list,
+             :through => :user,
+             :source => :guests
+
   has_one    :expression_arrangement,
              :through => :user,
              :source => :expressions

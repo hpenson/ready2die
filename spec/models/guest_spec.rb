@@ -18,6 +18,8 @@ RSpec.describe Guest, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_one(:service) }
+
     end
 
     describe "Validations" do
