@@ -48,7 +48,7 @@ class GiftsController < ApplicationController
     @gift.address = params.fetch("address")
     @gift.email = params.fetch("email")
     @gift.kind = params.fetch("kind")
-    @gift.user_id = params.fetch("user_id")
+    
 
     if @gift.valid?
       @gift.save
