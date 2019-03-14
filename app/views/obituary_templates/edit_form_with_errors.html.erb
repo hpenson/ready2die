@@ -1,0 +1,77 @@
+<!-- Validation failure messages -->
+<% if @obituary.errors.any? %>
+  <% @obituary.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit obituary #<%= @obituary.id %>
+</h1>
+
+<hr>
+
+<!-- Form obituary start -->
+<form action="/update_obituary/<%= @obituary.id %>" method="post">
+<!-- Form obituary end -->
+
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <!-- Input for description start -->
+    <input type="text" id="description" name="description" class="form-control" value="<%= @obituary.description %>">
+    <!-- Input for description end -->
+  </div>
+  <!-- Label and input for description end -->
+
+  <!-- Label and input for outlet start -->
+  <div class="form-group">
+    <label for="outlet">
+      Outlet
+    </label>
+
+    <!-- Input for outlet start -->
+    <input type="text" id="outlet" name="outlet" class="form-control" value="<%= @obituary.outlet %>">
+    <!-- Input for outlet end -->
+  </div>
+  <!-- Label and input for outlet end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @obituary.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for rank start -->
+  <div class="form-group">
+    <label for="rank">
+      Rank
+    </label>
+
+    <!-- Input for rank start -->
+    <input type="text" id="rank" name="rank" class="form-control" value="<%= @obituary.rank %>">
+    <!-- Input for rank end -->
+  </div>
+  <!-- Label and input for rank end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update obituary
+  </button>
+</form>
+
+<hr>
+
+<a href="/obituaries">
+  Go back
+</a>

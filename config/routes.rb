@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Obituary resource:
+
+  # CREATE
+  get("/obituaries/new", { :controller => "obituaries", :action => "new_form" })
+  post("/create_obituary", { :controller => "obituaries", :action => "create_row" })
+
+  # READ
+  get("/obituaries", { :controller => "obituaries", :action => "index" })
+  get("/obituaries/:id_to_display", { :controller => "obituaries", :action => "show" })
+
+  # UPDATE
+  get("/obituaries/:prefill_with_id/edit", { :controller => "obituaries", :action => "edit_form" })
+  post("/update_obituary/:id_to_modify", { :controller => "obituaries", :action => "update_row" })
+
+  # DELETE
+  get("/delete_obituary/:id_to_remove", { :controller => "obituaries", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Discretion resource:
 
   # CREATE

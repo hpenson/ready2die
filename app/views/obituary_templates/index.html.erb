@@ -1,0 +1,112 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All obituaries
+    </h1>
+
+    <a href="/obituaries/new" class="btn btn-block btn-outline-secondary">
+      Add a new obituary
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Description
+        </th>
+
+        <th>
+          Outlet
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Rank
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @obituaries.each do |obituary| %>
+      <tr>
+        <!-- Display obituary.id start -->
+        <td>
+          <%= obituary.id %>
+        </td>
+        <!-- Display obituary.id end -->
+
+        <!-- Display obituary.description start -->
+        <td>
+          <%= obituary.description %>
+        </td>
+        <!-- Display obituary.description end -->
+
+        <!-- Display obituary.outlet start -->
+        <td>
+          <%= obituary.outlet %>
+        </td>
+        <!-- Display obituary.outlet end -->
+
+        <!-- Display obituary.user_id start -->
+        <td>
+          <%= obituary.user_id %>
+        </td>
+        <!-- Display obituary.user_id end -->
+
+        <!-- Display obituary.rank start -->
+        <td>
+          <%= obituary.rank %>
+        </td>
+        <!-- Display obituary.rank end -->
+
+        <!-- Display obituary.created_at start -->
+        <td>
+          <%= time_ago_in_words(obituary.created_at) %> ago
+        </td>
+        <!-- Display obituary.created_at end -->
+
+        <!-- Display obituary.updated_at start -->
+        <td>
+          <%= time_ago_in_words(obituary.updated_at) %> ago
+        </td>
+        <!-- Display obituary.updated_at end -->
+
+        <td>
+          <a href="/obituaries/<%= obituary.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
