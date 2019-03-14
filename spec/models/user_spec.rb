@@ -4,6 +4,8 @@ RSpec.describe User, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:videos) }
+
     it { should have_many(:expressions) }
 
     it { should have_many(:services) }
