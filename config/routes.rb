@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Role resource:
+
+  # CREATE
+  get("/roles/new", { :controller => "roles", :action => "new_form" })
+  post("/create_role", { :controller => "roles", :action => "create_row" })
+
+  # READ
+  get("/roles", { :controller => "roles", :action => "index" })
+  get("/roles/:id_to_display", { :controller => "roles", :action => "show" })
+
+  # UPDATE
+  get("/roles/:prefill_with_id/edit", { :controller => "roles", :action => "edit_form" })
+  post("/update_role/:id_to_modify", { :controller => "roles", :action => "update_row" })
+
+  # DELETE
+  get("/delete_role/:id_to_remove", { :controller => "roles", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Mc resource:
 
   # CREATE

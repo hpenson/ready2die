@@ -1,0 +1,112 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All roles
+    </h1>
+
+    <a href="/roles/new" class="btn btn-block btn-outline-secondary">
+      Add a new role
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Kind
+        </th>
+
+        <th>
+          Description
+        </th>
+
+        <th>
+          Rank
+        </th>
+
+        <th>
+          Guest
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @roles.each do |role| %>
+      <tr>
+        <!-- Display role.id start -->
+        <td>
+          <%= role.id %>
+        </td>
+        <!-- Display role.id end -->
+
+        <!-- Display role.kind start -->
+        <td>
+          <%= role.kind %>
+        </td>
+        <!-- Display role.kind end -->
+
+        <!-- Display role.description start -->
+        <td>
+          <%= role.description %>
+        </td>
+        <!-- Display role.description end -->
+
+        <!-- Display role.rank start -->
+        <td>
+          <%= role.rank %>
+        </td>
+        <!-- Display role.rank end -->
+
+        <!-- Display role.guest_id start -->
+        <td>
+          <%= role.guest_id %>
+        </td>
+        <!-- Display role.guest_id end -->
+
+        <!-- Display role.created_at start -->
+        <td>
+          <%= time_ago_in_words(role.created_at) %> ago
+        </td>
+        <!-- Display role.created_at end -->
+
+        <!-- Display role.updated_at start -->
+        <td>
+          <%= time_ago_in_words(role.updated_at) %> ago
+        </td>
+        <!-- Display role.updated_at end -->
+
+        <td>
+          <a href="/roles/<%= role.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
