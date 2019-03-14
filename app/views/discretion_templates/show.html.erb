@@ -13,17 +13,21 @@
 
       <!-- Edit link discretion start -->
       <div class="col">
-        <a href="/discretions/<%= @discretion.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit discretion
-        </a>
+        <% if current_user == @discretion.user %>
+          <a href="/discretions/<%= @discretion.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit discretion
+          </a>
+        <% end %>
       </div>
       <!-- Edit link discretion end -->
 
       <!-- Delete link discretion start -->
       <div class="col">
-        <a href="/delete_discretion/<%= @discretion.id %>" class="btn btn-block btn-outline-secondary">
-          Delete discretion
-        </a>
+        <% if current_user == @discretion.user %>
+          <a href="/delete_discretion/<%= @discretion.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete discretion
+          </a>
+        <% end %>
       </div>
       <!-- Delete link discretion end -->
     </div>

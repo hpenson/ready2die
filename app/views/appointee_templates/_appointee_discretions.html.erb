@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_discretion_from_apppointee/<%= discretion.id %>">
-          Delete
-        </a>
+        <%if current_user == discretion.user %>
+          <a href="/delete_discretion_from_appointee/<%= discretion.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>
