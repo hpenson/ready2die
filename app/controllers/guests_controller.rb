@@ -52,7 +52,7 @@ class GuestsController < ApplicationController
     @guest.address = params.fetch("address")
     @guest.email = params.fetch("email")
     @guest.phone = params.fetch("phone")
-    @guest.user_id = params.fetch("user_id")
+    
 
     if @guest.valid?
       @guest.save
