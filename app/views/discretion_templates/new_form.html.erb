@@ -64,7 +64,7 @@
     </label>
 
     <!-- Input for apppointee_id start -->
-    <input type="text" id="apppointee_id" name="apppointee_id" class="form-control">
+    <%= select_tag(:apppointee_id, options_from_collection_for_select(Appointee.all, :id, :last_name, @discretion.apppointee_id), :class => "form-control") %>
     <!-- Input for apppointee_id end -->
   </div>
   <!-- Label and input for apppointee_id end -->
