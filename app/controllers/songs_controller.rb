@@ -46,7 +46,7 @@ class SongsController < ApplicationController
     @song.title = params.fetch("title")
     @song.artist = params.fetch("artist")
     @song.rank = params.fetch("rank")
-    @song.user_id = params.fetch("user_id")
+    
 
     if @song.valid?
       @song.save
