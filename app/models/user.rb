@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :friends,
+             :dependent => :destroy
+
   has_many   :remains,
              :dependent => :destroy
 
