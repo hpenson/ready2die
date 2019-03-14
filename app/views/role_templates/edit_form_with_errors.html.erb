@@ -60,7 +60,7 @@
     </label>
 
     <!-- Input for guest_id start -->
-    <input type="text" id="guest_id" name="guest_id" class="form-control" value="<%= @role.guest_id %>">
+    <%= select_tag(:guest_id, options_from_collection_for_select(Guest.all, :id, :first_name, @role.guest_id), :class => "form-control") %>
     <!-- Input for guest_id end -->
   </div>
   <!-- Label and input for guest_id end -->
