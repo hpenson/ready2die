@@ -14,6 +14,8 @@ RSpec.describe Service, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_one(:expression_arrangement) }
+
     it { should have_one(:video_playlist) }
 
     it { should have_one(:slideshow) }

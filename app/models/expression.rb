@@ -6,6 +6,10 @@ class Expression < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :service,
+             :through => :user,
+             :source => :services
+
   # Validations
 
 end
