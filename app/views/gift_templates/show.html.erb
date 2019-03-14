@@ -13,17 +13,21 @@
 
       <!-- Edit link gift start -->
       <div class="col">
-        <a href="/gifts/<%= @gift.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit gift
-        </a>
+        <% if current_user == @gift.user %>
+          <a href="/gifts/<%= @gift.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit gift
+          </a>
+        <% end %>
       </div>
       <!-- Edit link gift end -->
 
       <!-- Delete link gift start -->
       <div class="col">
-        <a href="/delete_gift/<%= @gift.id %>" class="btn btn-block btn-outline-secondary">
-          Delete gift
-        </a>
+        <% if current_user == @gift.user %>
+          <a href="/delete_gift/<%= @gift.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete gift
+          </a>
+        <% end %>
       </div>
       <!-- Delete link gift end -->
     </div>
