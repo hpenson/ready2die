@@ -45,6 +45,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :themes,
+             :through => :services,
+             :source => :theme
+
   has_many   :pall_bearers,
              :through => :guests,
              :source => :pall_bearer

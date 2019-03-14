@@ -36,6 +36,8 @@ RSpec.describe User, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:themes) }
+
     it { should have_many(:pall_bearers) }
 
     it { should have_many(:speakers) }
