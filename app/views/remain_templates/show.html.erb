@@ -13,17 +13,21 @@
 
       <!-- Edit link remain start -->
       <div class="col">
-        <a href="/remains/<%= @remain.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit remain
-        </a>
+        <% if current_user == @remain.user %>
+          <a href="/remains/<%= @remain.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit remain
+          </a>
+        <% end %>
       </div>
       <!-- Edit link remain end -->
 
       <!-- Delete link remain start -->
       <div class="col">
-        <a href="/delete_remain/<%= @remain.id %>" class="btn btn-block btn-outline-secondary">
-          Delete remain
-        </a>
+        <% if current_user == @remain.user %>
+          <a href="/delete_remain/<%= @remain.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete remain
+          </a>
+        <% end %>
       </div>
       <!-- Delete link remain end -->
     </div>
