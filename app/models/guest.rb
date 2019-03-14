@@ -1,6 +1,9 @@
 class Guest < ApplicationRecord
   # Direct associations
 
+  has_many   :speakers,
+             :dependent => :destroy
+
   has_one    :pall_bearer,
              :dependent => :destroy
 
