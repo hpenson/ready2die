@@ -13,17 +13,21 @@
 
       <!-- Edit link obituary start -->
       <div class="col">
-        <a href="/obituaries/<%= @obituary.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit obituary
-        </a>
+        <% if current_user == @obituary.user %>
+          <a href="/obituaries/<%= @obituary.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit obituary
+          </a>
+        <% end %>
       </div>
       <!-- Edit link obituary end -->
 
       <!-- Delete link obituary start -->
       <div class="col">
-        <a href="/delete_obituary/<%= @obituary.id %>" class="btn btn-block btn-outline-secondary">
-          Delete obituary
-        </a>
+        <% if current_user == @obituary.user %>
+          <a href="/delete_obituary/<%= @obituary.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete obituary
+          </a>
+        <% end %>
       </div>
       <!-- Delete link obituary end -->
     </div>
