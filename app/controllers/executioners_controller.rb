@@ -52,7 +52,7 @@ class ExecutionersController < ApplicationController
     @executioner.email = params.fetch("email")
     @executioner.phone = params.fetch("phone")
     @executioner.instruction = params.fetch("instruction")
-    @executioner.user_id = params.fetch("user_id")
+    
 
     if @executioner.valid?
       @executioner.save
