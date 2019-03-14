@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Remain resource:
+
+  # CREATE
+  get("/remains/new", { :controller => "remains", :action => "new_form" })
+  post("/create_remain", { :controller => "remains", :action => "create_row" })
+
+  # READ
+  get("/remains", { :controller => "remains", :action => "index" })
+  get("/remains/:id_to_display", { :controller => "remains", :action => "show" })
+
+  # UPDATE
+  get("/remains/:prefill_with_id/edit", { :controller => "remains", :action => "edit_form" })
+  post("/update_remain/:id_to_modify", { :controller => "remains", :action => "update_row" })
+
+  # DELETE
+  get("/delete_remain/:id_to_remove", { :controller => "remains", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Venue resource:
 
   # CREATE
