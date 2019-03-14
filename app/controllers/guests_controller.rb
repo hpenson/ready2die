@@ -10,7 +10,7 @@ class GuestsController < ApplicationController
   end
 
   def index
-    @guests = Guest.all
+    @guests = current_user.guests.page(params[:page]).per(10)
 
     render("guest_templates/index.html.erb")
   end
