@@ -44,7 +44,7 @@ class RemainsController < ApplicationController
 
     @remain.portion = params.fetch("portion")
     @remain.wish = params.fetch("wish")
-    @remain.user_id = params.fetch("user_id")
+    
 
     if @remain.valid?
       @remain.save
