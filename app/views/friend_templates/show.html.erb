@@ -1,0 +1,118 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Friend #<%= @friend.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/friends" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link friend start -->
+      <div class="col">
+        <a href="/friends/<%= @friend.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit friend
+        </a>
+      </div>
+      <!-- Edit link friend end -->
+
+      <!-- Delete link friend start -->
+      <div class="col">
+        <a href="/delete_friend/<%= @friend.id %>" class="btn btn-block btn-outline-secondary">
+          Delete friend
+        </a>
+      </div>
+      <!-- Delete link friend end -->
+    </div>
+
+    <dl>
+      <dt>
+        First name
+      </dt>
+      <!-- Display first_name start -->
+      <dd>
+        <%= @friend.first_name %>
+      </dd>
+      <!-- Display first_name end -->
+
+      <dt>
+        Last name
+      </dt>
+      <!-- Display last_name start -->
+      <dd>
+        <%= @friend.last_name %>
+      </dd>
+      <!-- Display last_name end -->
+
+      <dt>
+        Address
+      </dt>
+      <!-- Display address start -->
+      <dd>
+        <%= @friend.address %>
+      </dd>
+      <!-- Display address end -->
+
+      <dt>
+        Email
+      </dt>
+      <!-- Display email start -->
+      <dd>
+        <%= @friend.email %>
+      </dd>
+      <!-- Display email end -->
+
+      <dt>
+        Phone
+      </dt>
+      <!-- Display phone start -->
+      <dd>
+        <%= @friend.phone %>
+      </dd>
+      <!-- Display phone end -->
+
+      <dt>
+        Image
+      </dt>
+      <!-- Display image start -->
+      <dd>
+        <%= @friend.image %>
+      </dd>
+      <!-- Display image end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @friend.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@friend.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@friend.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

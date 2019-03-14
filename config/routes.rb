@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Friend resource:
+
+  # CREATE
+  get("/friends/new", { :controller => "friends", :action => "new_form" })
+  post("/create_friend", { :controller => "friends", :action => "create_row" })
+
+  # READ
+  get("/friends", { :controller => "friends", :action => "index" })
+  get("/friends/:id_to_display", { :controller => "friends", :action => "show" })
+
+  # UPDATE
+  get("/friends/:prefill_with_id/edit", { :controller => "friends", :action => "edit_form" })
+  post("/update_friend/:id_to_modify", { :controller => "friends", :action => "update_row" })
+
+  # DELETE
+  get("/delete_friend/:id_to_remove", { :controller => "friends", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Executioner resource:
 
   # CREATE
