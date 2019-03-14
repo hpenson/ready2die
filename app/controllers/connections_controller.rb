@@ -80,7 +80,7 @@ class ConnectionsController < ApplicationController
     @connection.why = params.fetch("why")
     @connection.afriend_id = params.fetch("afriend_id")
     @connection.bfriend_id = params.fetch("bfriend_id")
-    @connection.user_id = params.fetch("user_id")
+    
 
     if @connection.valid?
       @connection.save
