@@ -14,6 +14,8 @@ RSpec.describe Service, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_one(:mc) }
+
     end
 
     describe "Validations" do

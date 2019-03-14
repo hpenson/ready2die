@@ -11,6 +11,10 @@ class Service < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :mc,
+             :through => :guest_list,
+             :source => :mc
+
   # Validations
 
 end

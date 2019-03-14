@@ -10,6 +10,8 @@ RSpec.describe Mc, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_one(:service) }
+
     it { should have_one(:user) }
 
     end
