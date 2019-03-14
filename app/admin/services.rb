@@ -1,4 +1,6 @@
 ActiveAdmin.register Service do
+
+ permit_params :venue_id, :user_id, :theme_id, :rank, :casket
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
