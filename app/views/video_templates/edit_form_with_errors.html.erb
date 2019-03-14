@@ -1,0 +1,89 @@
+<!-- Validation failure messages -->
+<% if @video.errors.any? %>
+  <% @video.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit video #<%= @video.id %>
+</h1>
+
+<hr>
+
+<!-- Form video start -->
+<form action="/update_video/<%= @video.id %>" method="post">
+<!-- Form video end -->
+
+  <!-- Label and input for upload start -->
+  <div class="form-group">
+    <label for="upload">
+      Upload
+    </label>
+
+    <!-- Input for upload start -->
+    <input type="text" id="upload" name="upload" class="form-control" value="<%= @video.upload %>">
+    <!-- Input for upload end -->
+  </div>
+  <!-- Label and input for upload end -->
+
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <!-- Input for description start -->
+    <input type="text" id="description" name="description" class="form-control" value="<%= @video.description %>">
+    <!-- Input for description end -->
+  </div>
+  <!-- Label and input for description end -->
+
+  <!-- Label and input for caption start -->
+  <div class="form-group">
+    <label for="caption">
+      Caption
+    </label>
+
+    <!-- Input for caption start -->
+    <input type="text" id="caption" name="caption" class="form-control" value="<%= @video.caption %>">
+    <!-- Input for caption end -->
+  </div>
+  <!-- Label and input for caption end -->
+
+  <!-- Label and input for rank start -->
+  <div class="form-group">
+    <label for="rank">
+      Rank
+    </label>
+
+    <!-- Input for rank start -->
+    <input type="text" id="rank" name="rank" class="form-control" value="<%= @video.rank %>">
+    <!-- Input for rank end -->
+  </div>
+  <!-- Label and input for rank end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @video.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update video
+  </button>
+</form>
+
+<hr>
+
+<a href="/videos">
+  Go back
+</a>

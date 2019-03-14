@@ -1,0 +1,100 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Video #<%= @video.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/videos" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link video start -->
+      <div class="col">
+        <a href="/videos/<%= @video.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit video
+        </a>
+      </div>
+      <!-- Edit link video end -->
+
+      <!-- Delete link video start -->
+      <div class="col">
+        <a href="/delete_video/<%= @video.id %>" class="btn btn-block btn-outline-secondary">
+          Delete video
+        </a>
+      </div>
+      <!-- Delete link video end -->
+    </div>
+
+    <dl>
+      <dt>
+        Upload
+      </dt>
+      <!-- Display upload start -->
+      <dd>
+        <%= @video.upload %>
+      </dd>
+      <!-- Display upload end -->
+
+      <dt>
+        Description
+      </dt>
+      <!-- Display description start -->
+      <dd>
+        <%= @video.description %>
+      </dd>
+      <!-- Display description end -->
+
+      <dt>
+        Caption
+      </dt>
+      <!-- Display caption start -->
+      <dd>
+        <%= @video.caption %>
+      </dd>
+      <!-- Display caption end -->
+
+      <dt>
+        Rank
+      </dt>
+      <!-- Display rank start -->
+      <dd>
+        <%= @video.rank %>
+      </dd>
+      <!-- Display rank end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @video.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@video.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@video.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
