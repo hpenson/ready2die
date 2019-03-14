@@ -48,7 +48,7 @@ class PhotosController < ApplicationController
     @photo.caption = params.fetch("caption")
     @photo.description = params.fetch("description")
     @photo.rank = params.fetch("rank")
-    @photo.user_id = params.fetch("user_id")
+    
 
     if @photo.valid?
       @photo.save
