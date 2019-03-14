@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Theme resource:
+
+  # CREATE
+  get("/themes/new", { :controller => "themes", :action => "new_form" })
+  post("/create_theme", { :controller => "themes", :action => "create_row" })
+
+  # READ
+  get("/themes", { :controller => "themes", :action => "index" })
+  get("/themes/:id_to_display", { :controller => "themes", :action => "show" })
+
+  # UPDATE
+  get("/themes/:prefill_with_id/edit", { :controller => "themes", :action => "edit_form" })
+  post("/update_theme/:id_to_modify", { :controller => "themes", :action => "update_row" })
+
+  # DELETE
+  get("/delete_theme/:id_to_remove", { :controller => "themes", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Remain resource:
 
   # CREATE
