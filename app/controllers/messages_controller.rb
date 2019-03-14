@@ -29,7 +29,7 @@ class MessagesController < ApplicationController
     @message.audio = params.fetch("audio")
     @message.video = params.fetch("video")
     @message.user_id = params.fetch("user_id")
-    @message.photo = params.fetch("photo")
+    @message.photo = params.fetch("photo") if params.key?("photo")
 
     if @message.valid?
       @message.save
@@ -58,7 +58,7 @@ class MessagesController < ApplicationController
     @message.audio = params.fetch("audio")
     @message.video = params.fetch("video")
     @message.user_id = params.fetch("user_id")
-    @message.photo = params.fetch("photo")
+    @message.photo = params.fetch("photo") if params.key?("photo")
 
     if @message.valid?
       @message.save
