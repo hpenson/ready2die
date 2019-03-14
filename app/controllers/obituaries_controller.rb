@@ -45,7 +45,7 @@ class ObituariesController < ApplicationController
 
     @obituary.description = params.fetch("description")
     @obituary.outlet = params.fetch("outlet")
-    @obituary.user_id = params.fetch("user_id")
+    
     @obituary.rank = params.fetch("rank")
 
     if @obituary.valid?
