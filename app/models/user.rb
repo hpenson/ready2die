@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :gifts,
+             :dependent => :destroy
+
   has_many   :obituaries,
              :dependent => :destroy
 
