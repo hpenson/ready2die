@@ -1,6 +1,11 @@
 class AppointeesController < ApplicationController
   def index
     @appointees = Appointee.all
+    @location_hash = Gmaps4rails.build_markers(@appointees.where.not(:address_latitude => nil)) do |appointee, marker|
+      marker.lat appointee.address_latitude
+      marker.lng appointee.address_longitude
+      marker.infowindow "<h5><a href='/appointees/#{appointee.id}'>#{appointee.last_name}</a></h5><small>#{appointee.address_formatted_address}</small>"
+    end
 
     render("appointee_templates/index.html.erb")
   end

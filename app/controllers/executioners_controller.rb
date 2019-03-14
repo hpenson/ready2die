@@ -11,6 +11,11 @@ class ExecutionersController < ApplicationController
 
   def index
     @executioners = current_user.executioners.page(params[:page]).per(10)
+    @location_hash = Gmaps4rails.build_markers(@executioners.where.not(:address_latitude => nil)) do |executioner, marker|
+      marker.lat executioner.address_latitude
+      marker.lng executioner.address_longitude
+      marker.infowindow "<h5><a href='/executioners/#{executioner.id}'>#{executioner.last_name}</a></h5><small>#{executioner.address_formatted_address}</small>"
+    end
 
     render("executioner_templates/index.html.erb")
   end

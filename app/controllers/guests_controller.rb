@@ -11,6 +11,11 @@ class GuestsController < ApplicationController
 
   def index
     @guests = current_user.guests.page(params[:page]).per(10)
+    @location_hash = Gmaps4rails.build_markers(@guests.where.not(:address_latitude => nil)) do |guest, marker|
+      marker.lat guest.address_latitude
+      marker.lng guest.address_longitude
+      marker.infowindow "<h5><a href='/guests/#{guest.id}'>#{guest.first_name}</a></h5><small>#{guest.address_formatted_address}</small>"
+    end
 
     render("guest_templates/index.html.erb")
   end

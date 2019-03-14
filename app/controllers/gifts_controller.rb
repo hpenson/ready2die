@@ -11,6 +11,11 @@ class GiftsController < ApplicationController
 
   def index
     @gifts = current_user.gifts.page(params[:page]).per(10)
+    @location_hash = Gmaps4rails.build_markers(@gifts.where.not(:address_latitude => nil)) do |gift, marker|
+      marker.lat gift.address_latitude
+      marker.lng gift.address_longitude
+      marker.infowindow "<h5><a href='/gifts/#{gift.id}'>#{gift.receipient}</a></h5><small>#{gift.address_formatted_address}</small>"
+    end
 
     render("gift_templates/index.html.erb")
   end

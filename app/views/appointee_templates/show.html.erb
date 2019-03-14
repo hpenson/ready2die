@@ -61,7 +61,9 @@
       </dt>
       <!-- Display address start -->
       <dd>
-        <%= @appointee.address %>
+        <div>
+          <%= render partial: "appointee_templates/one_photo_map" %>
+        </div>
       </dd>
       <!-- Display address end -->
 

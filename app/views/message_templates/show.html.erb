@@ -56,7 +56,9 @@
       </dt>
       <!-- Display address start -->
       <dd>
-        <%= @message.address %>
+        <div>
+          <%= render partial: "message_templates/one_photo_map" %>
+        </div>
       </dd>
       <!-- Display address end -->
 

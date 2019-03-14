@@ -11,6 +11,11 @@ class FriendsController < ApplicationController
 
   def index
     @friends = current_user.friends.page(params[:page]).per(10)
+    @location_hash = Gmaps4rails.build_markers(@friends.where.not(:address_latitude => nil)) do |friend, marker|
+      marker.lat friend.address_latitude
+      marker.lng friend.address_longitude
+      marker.infowindow "<h5><a href='/friends/#{friend.id}'>#{friend.first_name}</a></h5><small>#{friend.address_formatted_address}</small>"
+    end
 
     render("friend_templates/index.html.erb")
   end

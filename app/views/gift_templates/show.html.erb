@@ -47,7 +47,9 @@
       </dt>
       <!-- Display address start -->
       <dd>
-        <%= @gift.address %>
+        <div>
+          <%= render partial: "gift_templates/one_photo_map" %>
+        </div>
       </dd>
       <!-- Display address end -->
 

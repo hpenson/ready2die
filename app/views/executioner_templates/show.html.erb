@@ -56,7 +56,9 @@
       </dt>
       <!-- Display address start -->
       <dd>
-        <%= @executioner.address %>
+        <div>
+          <%= render partial: "executioner_templates/one_photo_map" %>
+        </div>
       </dd>
       <!-- Display address end -->
 

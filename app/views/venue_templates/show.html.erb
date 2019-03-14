@@ -43,7 +43,9 @@
       </dt>
       <!-- Display address start -->
       <dd>
-        <%= @venue.address %>
+        <div>
+          <%= render partial: "venue_templates/one_photo_map" %>
+        </div>
       </dd>
       <!-- Display address end -->
 
