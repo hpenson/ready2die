@@ -51,7 +51,7 @@
     </label>
 
     <!-- Input for theme_id start -->
-    <input type="text" id="theme_id" name="theme_id" class="form-control" value="<%= @service.theme_id %>">
+    <%= select_tag(:theme_id, options_from_collection_for_select(Theme.all, :id, :rank, @service.theme_id), :class => "form-control") %>
     <!-- Input for theme_id end -->
   </div>
   <!-- Label and input for theme_id end -->
