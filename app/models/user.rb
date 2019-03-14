@@ -45,6 +45,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :roles,
+             :through => :guests,
+             :source => :roles
+
   has_many   :mcs,
              :through => :services,
              :source => :mc
