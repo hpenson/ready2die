@@ -57,7 +57,7 @@ class MessagesController < ApplicationController
     @message.content = params.fetch("content")
     @message.audio = params.fetch("audio")
     @message.video = params.fetch("video")
-    @message.user_id = params.fetch("user_id")
+    
     @message.photo = params.fetch("photo") if params.key?("photo")
 
     if @message.valid?
