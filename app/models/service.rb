@@ -1,6 +1,8 @@
 class Service < ApplicationRecord
   # Direct associations
 
+  belongs_to :theme
+
   belongs_to :venue,
              :counter_cache => true
 
