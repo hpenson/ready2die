@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Appointee resource:
+
+  # CREATE
+  get("/appointees/new", { :controller => "appointees", :action => "new_form" })
+  post("/create_appointee", { :controller => "appointees", :action => "create_row" })
+
+  # READ
+  get("/appointees", { :controller => "appointees", :action => "index" })
+  get("/appointees/:id_to_display", { :controller => "appointees", :action => "show" })
+
+  # UPDATE
+  get("/appointees/:prefill_with_id/edit", { :controller => "appointees", :action => "edit_form" })
+  post("/update_appointee/:id_to_modify", { :controller => "appointees", :action => "update_row" })
+
+  # DELETE
+  get("/delete_appointee/:id_to_remove", { :controller => "appointees", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Video resource:
 
   # CREATE
