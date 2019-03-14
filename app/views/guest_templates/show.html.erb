@@ -13,17 +13,21 @@
 
       <!-- Edit link guest start -->
       <div class="col">
-        <a href="/guests/<%= @guest.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit guest
-        </a>
+        <% if current_user == @guest.user %>
+          <a href="/guests/<%= @guest.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit guest
+          </a>
+        <% end %>
       </div>
       <!-- Edit link guest end -->
 
       <!-- Delete link guest start -->
       <div class="col">
-        <a href="/delete_guest/<%= @guest.id %>" class="btn btn-block btn-outline-secondary">
-          Delete guest
-        </a>
+        <% if current_user == @guest.user %>
+          <a href="/delete_guest/<%= @guest.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete guest
+          </a>
+        <% end %>
       </div>
       <!-- Delete link guest end -->
     </div>
