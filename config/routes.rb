@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Gift resource:
+
+  # CREATE
+  get("/gifts/new", { :controller => "gifts", :action => "new_form" })
+  post("/create_gift", { :controller => "gifts", :action => "create_row" })
+
+  # READ
+  get("/gifts", { :controller => "gifts", :action => "index" })
+  get("/gifts/:id_to_display", { :controller => "gifts", :action => "show" })
+
+  # UPDATE
+  get("/gifts/:prefill_with_id/edit", { :controller => "gifts", :action => "edit_form" })
+  post("/update_gift/:id_to_modify", { :controller => "gifts", :action => "update_row" })
+
+  # DELETE
+  get("/delete_gift/:id_to_remove", { :controller => "gifts", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Obituary resource:
 
   # CREATE

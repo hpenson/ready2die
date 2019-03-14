@@ -1,0 +1,100 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Gift #<%= @gift.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/gifts" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link gift start -->
+      <div class="col">
+        <a href="/gifts/<%= @gift.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit gift
+        </a>
+      </div>
+      <!-- Edit link gift end -->
+
+      <!-- Delete link gift start -->
+      <div class="col">
+        <a href="/delete_gift/<%= @gift.id %>" class="btn btn-block btn-outline-secondary">
+          Delete gift
+        </a>
+      </div>
+      <!-- Delete link gift end -->
+    </div>
+
+    <dl>
+      <dt>
+        Receipient
+      </dt>
+      <!-- Display receipient start -->
+      <dd>
+        <%= @gift.receipient %>
+      </dd>
+      <!-- Display receipient end -->
+
+      <dt>
+        Address
+      </dt>
+      <!-- Display address start -->
+      <dd>
+        <%= @gift.address %>
+      </dd>
+      <!-- Display address end -->
+
+      <dt>
+        Email
+      </dt>
+      <!-- Display email start -->
+      <dd>
+        <%= @gift.email %>
+      </dd>
+      <!-- Display email end -->
+
+      <dt>
+        Kind
+      </dt>
+      <!-- Display kind start -->
+      <dd>
+        <%= @gift.kind %>
+      </dd>
+      <!-- Display kind end -->
+
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @gift.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@gift.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@gift.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
